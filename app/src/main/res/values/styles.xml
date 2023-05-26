@@ -1,0 +1,14 @@
+<resources>
+
+    <style name="Widget.Theme.FirstAid.MyView" parent="">
+        <item name="android:background">@color/gray_400</item>
+        <item name="exampleColor">@color/light_blue_400</item>
+    </style>
+
+    <style name="AppTheme" parent="Theme.AppCompat.Light.NoActionBar">
+        <item name="android:windowTranslucentNavigation">true</item>
+        <item name="android:windowTranslucentStatus">true</item>
+        <!-- Các thuộc tính khác của theme -->
+    </style>
+
+</resources>
