@@ -30,14 +30,15 @@
         android:paddingBottom="100dp"
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
+
         <androidx.appcompat.widget.AppCompatButton
-            android:text="SƠ CỨU"
             android:id="@+id/btn_so_cuu"
-            android:background="#ff8888"
-            android:layout_marginTop="10dp"
-            android:padding="20dp"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"/>
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:background="#fd2888"
+            android:padding="20dp"
+            android:text="SƠ CỨU" />
 
         <androidx.appcompat.widget.AppCompatButton
             android:text="TÍN HIỆU"
@@ -49,13 +50,13 @@
             android:layout_height="wrap_content"/>
 
         <androidx.appcompat.widget.AppCompatButton
-            android:text="TÀI LIỆU"
             android:id="@+id/btn_khoa_hoc"
-            android:background="#88ff88"
-            android:layout_marginTop="10dp"
-            android:padding="20dp"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"/>
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:background="#88ff88"
+            android:padding="20dp"
+            android:text="TÀI LIỆU" />
     </LinearLayout>
 
 </RelativeLayout>
