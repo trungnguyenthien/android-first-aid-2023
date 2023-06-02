@@ -1,30 +1,53 @@
 package vn.nhh.aid
 
+import android.annotation.SuppressLint
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import androidx.fragment.app.FragmentManager
-import vn.nhh.aid.screens.BaseFragment
-import vn.nhh.aid.screens.TopFragment
+import androidx.fragment.app.Fragment
+
+import vn.nhh.aid.databinding.ActivityMainBinding
 
 private var shareInstance: MainActivity? = null
 class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         shareInstance = this
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_main)
-        pushPageStack(TopFragment())
+
+        val binding = ActivityMainBinding.inflate(layoutInflater)
+        setContentView(binding.root)
+        replaceFragment(HomeFragment())
+
+        binding.bottomNavigationView.setOnItemSelectedListener { item ->
+
+            when (item.itemId) {
+
+                R.id.home -> {
+                    replaceFragment(HomeFragment())
+                }
+                R.id.map -> {
+                    replaceFragment(MapFragment())
+                }
+                R.id.lesson -> {
+                    replaceFragment(LessonFragment())
+                }
+                R.id.setting -> {
+                    replaceFragment(SettingFragment())
+                }
+
+            }
+
+            true
+        }
     }
-}
 
-fun pushPageStack(fragment: BaseFragment, trackName: String? = null) {
-    val fragmentManager = shareInstance?.supportFragmentManager ?: return
-    val fragmentTransaction = fragmentManager.beginTransaction()
-    fragmentTransaction.replace(R.id.fragment_container, fragment)
-    fragmentTransaction.addToBackStack(trackName)
-    fragmentTransaction.commit()
-}
+    @SuppressLint("CommitTransaction")
+    private fun replaceFragment(fragment: Fragment) {
 
-fun popStack(trackName: String? = null) {
-    val fragmentManager = shareInstance?.supportFragmentManager ?: return
-    fragmentManager.popBackStack(trackName, FragmentManager.POP_BACK_STACK_INCLUSIVE)
+        val fragmentManager = supportFragmentManager
+        val fragmentTransaction = fragmentManager.beginTransaction()
+
+        fragmentTransaction.replace(R.id.frameLayout, fragment)
+        fragmentTransaction.commit()
+
+    }
 }
