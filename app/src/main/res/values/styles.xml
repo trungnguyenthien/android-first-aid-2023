@@ -11,4 +11,8 @@
         <!-- Các thuộc tính khác của theme -->
     </style>
 
+    <style name="MessageToggleButtonStyle" parent="android:Widget.Button.Toggle">
+        <item name="android:background">@drawable/message_toggle_button</item>
+    </style>
+
 </resources>
