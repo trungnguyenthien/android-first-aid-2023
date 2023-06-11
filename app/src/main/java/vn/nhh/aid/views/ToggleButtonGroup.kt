@@ -1,4 +1,4 @@
-package vn.nhh.aid.utils
+package vn.nhh.aid.views
 import android.widget.CompoundButton
 import android.widget.ToggleButton
 
@@ -28,3 +28,17 @@ class ToggleButtonGroup(buttons: List<ToggleButton> = emptyList()) {
         onCheckedChangeListener?.onCheckedChanged(buttonView, isChecked)
     }
 }
+
+
+/**
+ *  questionLayout()?.let {
+it.addView(makeMessageToggleButton(requireContext(), "Trong tệp xml của ToggleButton, thêm thuộc tính "))
+it.addView(makeMessageToggleButton(requireContext(), "Trong code Kotlin, bạn có thể sử dụng phương thức setTextAlignment() để thiết lập căn chỉnh của văn bản cho ToggleButton. Ví dụ:"))
+it.addView(makeMessageToggleButton(requireContext(), "HELLO 3"))
+}
+
+val buttons = questionLayout()?.allViews?.mapNotNull { it as? android.widget.ToggleButton }?.toList() ?: emptyList()
+ToggleButtonGroup(buttons).setOnCheckedChangeListener { button, isChecked ->
+
+}
+ */

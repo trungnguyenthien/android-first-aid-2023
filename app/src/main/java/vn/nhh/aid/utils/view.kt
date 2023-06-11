@@ -12,7 +12,9 @@ import androidx.appcompat.widget.LinearLayoutCompat
 import androidx.core.view.setPadding
 import vn.nhh.aid.R
 import vn.nhh.aid.shareMainActivity
+import java.util.regex.Pattern
 
+//AIzaSyDiL3mPyOIdtvSxChQkilRcVhi58fUQi1o
 fun shareContext(): Context = shareMainActivity()
 fun Int.dp(): Int = (this * shareContext().resources.displayMetrics.density).toInt()
 fun Int.sp() = (this * shareContext().resources.displayMetrics.scaledDensity).toInt()
@@ -50,4 +52,15 @@ fun makeRadioGroup(context: Context) = RadioGroup(context).apply {
         ViewGroup.LayoutParams.MATCH_PARENT,
         ViewGroup.LayoutParams.WRAP_CONTENT
     )
+}
+
+fun parseVideoId(youtubeUrl: String): String? {
+    val regex = "(?<=watch\\?v=|/videos/|embed\\/|youtu.be\\/|\\/v\\/|\\/e\\/|watch\\?v=|\\/videos\\/|embed\\/|youtu.be\\/|\\/v\\/|\\/e\\/|watch\\?v%3D|watch\\?feature=player_embedded&v=|%2Fvideos%2F|embed%\u200C\u200B2F|youtu.be%2F|%2Fv%2F)[^#\\&\\?\\n]*"
+    val pattern = Pattern.compile(regex)
+    val matcher = pattern.matcher(youtubeUrl)
+    return if (matcher.find()) {
+        matcher.group()
+    } else {
+        null
+    }
 }
