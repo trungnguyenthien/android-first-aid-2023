@@ -16,6 +16,8 @@ class MainActivity : AppCompatActivity() {
     }
 }
 
+fun shareMainActivity() = shareInstance!!
+
 fun pushPageStack(fragment: BaseFragment, trackName: String? = null) {
     val fragmentManager = shareInstance?.supportFragmentManager ?: return
     val fragmentTransaction = fragmentManager.beginTransaction()
