@@ -5,41 +5,47 @@
     android:layout_height="match_parent"
     android:background="@color/mongolia"
     android:theme="@style/ThemeOverlay.FirstAid.FullscreenContainer"
-    tools:context=".HomeFragment" >
+    tools:context=".HomeFragment">
 
     <!-- The primary full-screen view. This can be replaced with whatever view
          is needed to present your content, e.g. VideoView, SurfaceView,
          TextureView, etc. -->
-    <!--TextView
+    <TextView
         android:id="@+id/fullscreen_content"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:gravity="center"
         android:keepScreenOn="true"
-        android:text="Home Fragment"
+        android:text="Emergency Fragment"
         android:textColor="@color/powder_blue"
         android:textSize="50sp"
-        android:textStyle="bold" / -->
+        android:textStyle="bold" />
 
     <!-- This FrameLayout insets its children based on system windows using
          android:fitsSystemWindows. -->
-
     <FrameLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:fitsSystemWindows="true"
-        android:layout_gravity="center">
+        android:fitsSystemWindows="true">
 
-        <ImageButton
-            android:id="@+id/center_button"
-            android:layout_gravity="center"
-            android:layout_width="wrap_content"
+        <LinearLayout
+            android:id="@+id/fullscreen_content_controls"
+            style="@style/Widget.Theme.FirstAid.ButtonBar.Fullscreen"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:src="@drawable/center_button"
-            android:background="@android:color/transparent"
-            android:backgroundTint="@android:color/transparent" />
+            android:layout_gravity="bottom|center_horizontal"
+            android:orientation="horizontal"
+            tools:ignore="UselessParent">
 
+            <Button
+                android:id="@+id/dummy_button"
+                style="?android:attr/buttonBarButtonStyle"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="@string/dummy_button" />
 
+        </LinearLayout>
     </FrameLayout>
 
 </FrameLayout>

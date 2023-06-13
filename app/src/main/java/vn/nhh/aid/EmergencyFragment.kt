@@ -8,16 +8,15 @@ import android.view.View
 import android.view.ViewGroup
 import android.view.WindowManager
 import android.widget.Button
-import android.widget.ImageButton
 import androidx.appcompat.app.AppCompatActivity
 import androidx.fragment.app.Fragment
-import vn.nhh.aid.databinding.FragmentHomeBinding
+import vn.nhh.aid.databinding.FragmentEmergencyBinding
 
 /**
  * An example full-screen fragment that shows and hides the system UI (i.e.
  * status bar and navigation/system bar) with user interaction.
  */
-class HomeFragment : Fragment() {
+class EmergencyFragment : Fragment() {
     private val hideHandler = Handler(Looper.myLooper()!!)
 
     @Suppress("InlinedApi")
@@ -60,7 +59,7 @@ class HomeFragment : Fragment() {
     private var fullscreenContent: View? = null
     private var fullscreenContentControls: View? = null
 
-    private var _binding: FragmentHomeBinding? = null
+    private var _binding: FragmentEmergencyBinding? = null
 
     // This property is only valid between onCreateView and
     // onDestroyView.
@@ -72,7 +71,7 @@ class HomeFragment : Fragment() {
         savedInstanceState: Bundle?
     ): View? {
 
-        _binding = FragmentHomeBinding.inflate(inflater, container, false)
+        _binding = FragmentEmergencyBinding.inflate(inflater, container, false)
         return binding.root
 
     }
@@ -80,12 +79,18 @@ class HomeFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        val centerButton: ImageButton = view.findViewById(R.id.center_button)
+        visible = true
 
-        centerButton.setOnClickListener {
-            val mainActivity = activity as MainActivity
-            mainActivity.replaceFragment(EmergencyFragment())
-        }
+        dummyButton = binding.dummyButton
+        fullscreenContent = binding.fullscreenContent
+        fullscreenContentControls = binding.fullscreenContentControls
+        // Set up the user interaction to manually show or hide the system UI.
+        fullscreenContent?.setOnClickListener { toggle() }
+
+        // Upon interacting with UI controls, delay any scheduled hide()
+        // operations to prevent the jarring behavior of controls going away
+        // while interacting with the UI.
+        dummyButton?.setOnTouchListener(delayHideTouchListener)
     }
 
     override fun onResume() {
