@@ -1,5 +1,6 @@
 package vn.nhh.aid
 
+import android.annotation.SuppressLint
 import android.os.Bundle
 import android.os.Handler
 import android.os.Looper
@@ -7,9 +8,10 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.view.WindowManager
-import android.widget.Button
 import androidx.appcompat.app.AppCompatActivity
 import androidx.fragment.app.Fragment
+import androidx.recyclerview.widget.LinearLayoutManager
+import androidx.recyclerview.widget.RecyclerView
 import vn.nhh.aid.databinding.FragmentLessonBinding
 
 /**
@@ -17,6 +19,10 @@ import vn.nhh.aid.databinding.FragmentLessonBinding
  * status bar and navigation/system bar) with user interaction.
  */
 class LessonFragment : Fragment() {
+
+    var lessonList = ArrayList<LessonModel>()
+    var imageList = arrayListOf(R.drawable.bottom_lesson)
+
     private val hideHandler = Handler(Looper.myLooper()!!)
 
     @Suppress("InlinedApi")
@@ -48,6 +54,7 @@ class LessonFragment : Fragment() {
      * system UI. This is to prevent the jarring behavior of controls going away
      * while interacting with activity UI.
      */
+    @SuppressLint("ClickableViewAccessibility")
     private val delayHideTouchListener = View.OnTouchListener { _, _ ->
         if (AUTO_HIDE) {
             delayedHide(AUTO_HIDE_DELAY_MILLIS)
@@ -55,7 +62,6 @@ class LessonFragment : Fragment() {
         false
     }
 
-    private var dummyButton: Button? = null
     private var fullscreenContent: View? = null
     private var fullscreenContentControls: View? = null
 
@@ -65,32 +71,67 @@ class LessonFragment : Fragment() {
     // onDestroyView.
     private val binding get() = _binding!!
 
+    /*
     override fun onCreateView(
         inflater: LayoutInflater,
         container: ViewGroup?,
         savedInstanceState: Bundle?
-    ): View? {
+    ): View {
 
-        _binding = FragmentLessonBinding.inflate(inflater, container, false)
+        val binding: FragmentLessonBinding = FragmentLessonBinding.inflate(layoutInflater)
+        val recyclerView: RecyclerView = binding.lessonRecyclerView
+
+        setUpLessonModel()
+
+        val adapter = LessonRecyclerViewAdapter(requireContext(), lessonList)
+        val layoutManager = LinearLayoutManager(requireContext())
+        layoutManager.orientation = LinearLayoutManager.VERTICAL
+
+        recyclerView.adapter = adapter
+        recyclerView.layoutManager = layoutManager
+
         return binding.root
-
     }
+     */
+
+    private lateinit var recyclerView: RecyclerView
+    override fun onCreateView(
+        inflater: LayoutInflater, container: ViewGroup?,
+        savedInstanceState: Bundle?
+    ): View? {
+        // Inflate the layout for this fragment
+        val view = inflater.inflate(R.layout.fragment_lesson, container, false)
+
+        // Add the following lines to create RecyclerView
+        val recyclerView = view.findViewById<RecyclerView>(R.id.lessonRecyclerView)
+        recyclerView.setHasFixedSize(true)
+        recyclerView.layoutManager = LinearLayoutManager(view.context)
+        recyclerView.adapter = LessonRecyclerViewAdapter()
+
+        return view
+    }
+
+    /*
+    private fun setUpLessonModel() {
+        val lessonNames = resources.getStringArray(R.array.lesson_name_txt)
+        val lessonDesc = resources.getStringArray(R.array.lesson_description_txt)
+
+        for (i in lessonNames.indices) {
+            lessonList.add(LessonModel(
+                lessonNames[i],
+                lessonDesc[i],
+                )
+            )
+        }
+    }
+     */
+
+
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
         visible = true
-
-        dummyButton = binding.dummyButton
-        fullscreenContent = binding.fullscreenContent
-        fullscreenContentControls = binding.fullscreenContentControls
-        // Set up the user interaction to manually show or hide the system UI.
-        fullscreenContent?.setOnClickListener { toggle() }
-
-        // Upon interacting with UI controls, delay any scheduled hide()
-        // operations to prevent the jarring behavior of controls going away
-        // while interacting with the UI.
-        dummyButton?.setOnTouchListener(delayHideTouchListener)
     }
 
     override fun onResume() {
@@ -114,7 +155,6 @@ class LessonFragment : Fragment() {
 
     override fun onDestroy() {
         super.onDestroy()
-        dummyButton = null
         fullscreenContent = null
         fullscreenContentControls = null
     }
