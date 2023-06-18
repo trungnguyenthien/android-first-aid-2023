@@ -6,12 +6,13 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.appcompat.widget.LinearLayoutCompat
+import androidx.core.os.persistableBundleOf
 import androidx.core.view.allViews
 import vn.nhh.aid.R
-import vn.nhh.aid.utils.ToggleButtonGroup
 import vn.nhh.aid.utils.makeMessageToggleButton
 import vn.nhh.aid.utils.makeRadioGroup
 import vn.nhh.aid.utils.shareContext
+import vn.nhh.aid.views.ToggleButtonGroup
 
 // TODO: Rename parameter arguments, choose names that match
 // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
@@ -40,16 +41,7 @@ class EvaluateProblemFragment : BaseFragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        questionLayout()?.let {
-            it.addView(makeMessageToggleButton(requireContext(), "Trong tệp xml của ToggleButton, thêm thuộc tính "))
-            it.addView(makeMessageToggleButton(requireContext(), "Trong code Kotlin, bạn có thể sử dụng phương thức setTextAlignment() để thiết lập căn chỉnh của văn bản cho ToggleButton. Ví dụ:"))
-            it.addView(makeMessageToggleButton(requireContext(), "HELLO 3"))
-        }
 
-        val buttons = questionLayout()?.allViews?.mapNotNull { it as? android.widget.ToggleButton }?.toList() ?: emptyList()
-        ToggleButtonGroup(buttons).setOnCheckedChangeListener { button, isChecked ->
-
-        }
     }
 
     override fun onCreateView(

@@ -2,13 +2,9 @@ package vn.nhh.aid.views
 import android.widget.CompoundButton
 import android.widget.ToggleButton
 
-class ToggleButtonGroup(buttons: List<ToggleButton> = emptyList()) {
+class ToggleButtonGroup {
     private val toggleButtons: MutableList<CompoundButton> = mutableListOf()
     private var onCheckedChangeListener: CompoundButton.OnCheckedChangeListener? = null
-
-    init {
-        buttons.forEach { add(it) }
-    }
 
     fun add(toggleButton: CompoundButton) {
         toggleButtons.add(toggleButton)

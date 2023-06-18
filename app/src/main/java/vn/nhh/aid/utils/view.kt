@@ -6,11 +6,16 @@ import android.graphics.Color
 import android.graphics.Typeface
 import android.view.View
 import android.view.ViewGroup
+import android.widget.ImageView
 import android.widget.RadioGroup
 import android.widget.ToggleButton
 import androidx.appcompat.widget.LinearLayoutCompat
 import androidx.core.view.setPadding
+import com.squareup.picasso.Picasso
 import vn.nhh.aid.R
+import vn.nhh.aid.screens.BaseListFragment
+import vn.nhh.aid.screens.BaseListFragmentController
+import vn.nhh.aid.screens.BaseListFragmentView
 import vn.nhh.aid.shareMainActivity
 import java.util.regex.Pattern
 
@@ -64,3 +69,15 @@ fun parseVideoId(youtubeUrl: String): String? {
         null
     }
 }
+
+fun loadImageByUrl(url: String, imageView: ImageView) {
+    Picasso.get().load(url).into(imageView)
+}
+
+fun makeHbfFragment(create: (view: BaseListFragmentView) -> Unit) = BaseListFragment(object: BaseListFragmentController {
+    override fun onViewCreated(view: BaseListFragmentView) {
+        create.invoke(view)
+    }
+
+    override fun onPressBack(view: BaseListFragmentView) { }
+})

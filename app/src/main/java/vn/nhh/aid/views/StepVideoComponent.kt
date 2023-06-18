@@ -4,14 +4,12 @@ import android.content.Context
 import android.util.AttributeSet
 import android.view.LayoutInflater
 import android.webkit.WebView
-import androidx.appcompat.widget.AppCompatImageView
 import androidx.appcompat.widget.AppCompatTextView
 import androidx.appcompat.widget.LinearLayoutCompat
-import com.squareup.picasso.Picasso
 import vn.nhh.aid.R
 import vn.nhh.aid.utils.parseVideoId
 
-class StepVideoView(context: Context, attrs: AttributeSet) : LinearLayoutCompat(context, attrs) {
+class StepVideoComponent(context: Context, attrs: AttributeSet) : LinearLayoutCompat(context, attrs) {
     init {
         LayoutInflater.from(context).inflate(R.layout.layout_step_video, this)
     }
