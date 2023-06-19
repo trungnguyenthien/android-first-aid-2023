@@ -10,9 +10,11 @@ import vn.nhh.aid.R
 interface BaseListFragmentController {
     fun onViewCreated(view: BaseListFragmentView)
     fun onPressBack(view: BaseListFragmentView)
+    fun onResume(view: BaseListFragmentView)
 }
 
 data class BaseListFragmentView(
+    val fragment: BaseListFragment,
     val header: LinearLayoutCompat,
     val body: LinearLayoutCompat,
     val footer: LinearLayoutCompat
@@ -24,6 +26,7 @@ class BaseListFragment(private val controller: BaseListFragmentController) : Bas
     lateinit var bodyLinearLayout: LinearLayoutCompat
 
     private fun baseListFragmentView() = BaseListFragmentView(
+        fragment = this,
         header = headerLinearLayout,
         body = bodyLinearLayout,
         footer = footerLinearLayout
@@ -41,6 +44,11 @@ class BaseListFragment(private val controller: BaseListFragmentController) : Bas
         }
         controller.onViewCreated(baseListFragmentView())
         return rootView
+    }
+
+    override fun onResume() {
+        super.onResume()
+        controller.onResume(baseListFragmentView())
     }
 
     override fun handleBackPressed(fmanager: FragmentManager) {

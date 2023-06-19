@@ -6,13 +6,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.appcompat.widget.LinearLayoutCompat
-import androidx.core.os.persistableBundleOf
-import androidx.core.view.allViews
 import vn.nhh.aid.R
-import vn.nhh.aid.utils.makeMessageToggleButton
-import vn.nhh.aid.utils.makeRadioGroup
-import vn.nhh.aid.utils.shareContext
-import vn.nhh.aid.views.ToggleButtonGroup
 
 // TODO: Rename parameter arguments, choose names that match
 // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER

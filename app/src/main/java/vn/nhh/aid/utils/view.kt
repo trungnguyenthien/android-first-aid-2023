@@ -52,13 +52,6 @@ fun makeMessageToggleButton(context: Context, text: String) = ToggleButton(conte
     typeface = Typeface.MONOSPACE
 }
 
-fun makeRadioGroup(context: Context) = RadioGroup(context).apply {
-    layoutParams = ViewGroup.LayoutParams(
-        ViewGroup.LayoutParams.MATCH_PARENT,
-        ViewGroup.LayoutParams.WRAP_CONTENT
-    )
-}
-
 fun parseVideoId(youtubeUrl: String): String? {
     val regex = "(?<=watch\\?v=|/videos/|embed\\/|youtu.be\\/|\\/v\\/|\\/e\\/|watch\\?v=|\\/videos\\/|embed\\/|youtu.be\\/|\\/v\\/|\\/e\\/|watch\\?v%3D|watch\\?feature=player_embedded&v=|%2Fvideos%2F|embed%\u200C\u200B2F|youtu.be%2F|%2Fv%2F)[^#\\&\\?\\n]*"
     val pattern = Pattern.compile(regex)
@@ -74,9 +67,17 @@ fun loadImageByUrl(url: String, imageView: ImageView) {
     Picasso.get().load(url).into(imageView)
 }
 
-fun makeHbfFragment(create: (view: BaseListFragmentView) -> Unit) = BaseListFragment(object: BaseListFragmentController {
+typealias HbfFragmentHandleFunc = (view: BaseListFragmentView) -> Unit
+fun makeHbfFragment(
+    resume: HbfFragmentHandleFunc,
+    create: HbfFragmentHandleFunc
+) = BaseListFragment(object: BaseListFragmentController {
     override fun onViewCreated(view: BaseListFragmentView) {
         create.invoke(view)
+    }
+
+    override fun onResume(view: BaseListFragmentView) {
+        resume.invoke(view)
     }
 
     override fun onPressBack(view: BaseListFragmentView) { }
