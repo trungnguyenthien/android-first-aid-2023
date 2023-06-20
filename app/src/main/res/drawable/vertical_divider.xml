@@ -1,4 +1,0 @@
-<shape xmlns:android="http://schemas.android.com/apk/res/android">
-    <size android:width="8dp" /> <!-- Chiều cao của đường phân cách -->
-    <solid android:color="#0000" /> <!-- Màu sắc của đường phân cách -->
-</shape>
