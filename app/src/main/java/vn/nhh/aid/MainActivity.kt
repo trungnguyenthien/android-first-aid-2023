@@ -1,53 +1,54 @@
 package vn.nhh.aid
 
-import android.annotation.SuppressLint
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import androidx.fragment.app.Fragment
-
-import vn.nhh.aid.databinding.ActivityMainBinding
+import androidx.fragment.app.FragmentManager
+import vn.nhh.aid.screens.BaseFragment
+import vn.nhh.aid.screens.PreventBack
+import vn.nhh.aid.screens.TopFragment
+import vn.nhh.aid.utils.makeHbfFragment
+import vn.nhh.aid.utils.makeMessageToggleButton
 
 private var shareInstance: MainActivity? = null
 class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         shareInstance = this
         super.onCreate(savedInstanceState)
+        setContentView(R.layout.activity_main)
 
-        val binding = ActivityMainBinding.inflate(layoutInflater)
-        setContentView(binding.root)
-        replaceFragment(HomeFragment())
+        val frag = makeHbfFragment(
+            create = {
 
-        binding.bottomNavigationView.setOnItemSelectedListener { item ->
+            },
+            resume = {
 
-            when (item.itemId) {
+            },
+        )
+        pushPageStack(frag)
+    }
 
-                R.id.home -> {
-                    replaceFragment(HomeFragment())
-                }
-                R.id.map -> {
-                    replaceFragment(MapFragment())
-                }
-                R.id.lesson -> {
-                    replaceFragment(LessonFragment())
-                }
-                R.id.setting -> {
-                    replaceFragment(SettingFragment())
-                }
-
-            }
-
-            true
+    override fun onBackPressed() {
+        super.onBackPressed()
+        val fragment = supportFragmentManager.findFragmentById(R.id.fragment_container)
+        if (fragment is PreventBack) {
+            fragment.handleBackPressed(fmanager = supportFragmentManager)
+            if (!fragment.allowBack()) return
         }
+        super.onBackPressed()
     }
+}
 
-    @SuppressLint("CommitTransaction")
-    public fun replaceFragment(fragment: Fragment) {
+fun shareMainActivity() = shareInstance!!
 
-        val fragmentManager = supportFragmentManager
-        val fragmentTransaction = fragmentManager.beginTransaction()
+fun pushPageStack(fragment: BaseFragment, trackName: String? = null) {
+    val fragmentManager = shareInstance?.supportFragmentManager ?: return
+    val fragmentTransaction = fragmentManager.beginTransaction()
+    fragmentTransaction.replace(R.id.fragment_container, fragment)
+    fragmentTransaction.addToBackStack(trackName)
+    fragmentTransaction.commit()
+}
 
-        fragmentTransaction.replace(R.id.frameLayout, fragment)
-        fragmentTransaction.commit()
-
-    }
+fun popStack(trackName: String? = null) {
+    val fragmentManager = shareInstance?.supportFragmentManager ?: return
+    fragmentManager.popBackStack(trackName, FragmentManager.POP_BACK_STACK_INCLUSIVE)
 }
