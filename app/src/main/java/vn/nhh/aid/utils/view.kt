@@ -5,17 +5,15 @@ import android.content.res.ColorStateList
 import android.graphics.Color
 import android.graphics.Typeface
 import android.view.View
-import android.view.ViewGroup
 import android.widget.ImageView
-import android.widget.RadioGroup
 import android.widget.ToggleButton
 import androidx.appcompat.widget.LinearLayoutCompat
 import androidx.core.view.setPadding
+import com.google.android.material.imageview.ShapeableImageView
+import com.google.android.material.shape.CornerFamily
+import com.google.android.material.shape.MaterialShapeDrawable
 import com.squareup.picasso.Picasso
 import vn.nhh.aid.R
-import vn.nhh.aid.screens.BaseListFragment
-import vn.nhh.aid.screens.BaseListFragmentController
-import vn.nhh.aid.screens.BaseListFragmentView
 import vn.nhh.aid.shareMainActivity
 import java.util.regex.Pattern
 
@@ -23,6 +21,15 @@ import java.util.regex.Pattern
 fun shareContext(): Context = shareMainActivity()
 fun Int.dp(): Int = (this * shareContext().resources.displayMetrics.density).toInt()
 fun Int.sp() = (this * shareContext().resources.displayMetrics.scaledDensity).toInt()
+
+fun standardShapableImageView(imageView: ShapeableImageView) {
+    val shapeAppearanceModel = imageView.shapeAppearanceModel
+        .toBuilder()
+        .setAllCorners(CornerFamily.ROUNDED, 12.dp().toFloat())
+        .build()
+
+    imageView.shapeAppearanceModel = shapeAppearanceModel
+}
 
 fun makeMessageToggleButton(context: Context, text: String) = ToggleButton(context).apply {
     textOn = text
@@ -66,19 +73,3 @@ fun parseVideoId(youtubeUrl: String): String? {
 fun loadImageByUrl(url: String, imageView: ImageView) {
     Picasso.get().load(url).into(imageView)
 }
-
-typealias HbfFragmentHandleFunc = (view: BaseListFragmentView) -> Unit
-fun makeHbfFragment(
-    resume: HbfFragmentHandleFunc,
-    create: HbfFragmentHandleFunc
-) = BaseListFragment(object: BaseListFragmentController {
-    override fun onViewCreated(view: BaseListFragmentView) {
-        create.invoke(view)
-    }
-
-    override fun onResume(view: BaseListFragmentView) {
-        resume.invoke(view)
-    }
-
-    override fun onPressBack(view: BaseListFragmentView) { }
-})

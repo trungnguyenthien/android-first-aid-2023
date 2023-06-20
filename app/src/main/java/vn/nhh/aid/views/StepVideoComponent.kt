@@ -9,7 +9,7 @@ import androidx.appcompat.widget.LinearLayoutCompat
 import vn.nhh.aid.R
 import vn.nhh.aid.utils.parseVideoId
 
-class StepVideoComponent(context: Context, attrs: AttributeSet) : LinearLayoutCompat(context, attrs) {
+class StepVideoComponent(context: Context) : LinearLayoutCompat(context) {
     init {
         LayoutInflater.from(context).inflate(R.layout.layout_step_video, this)
     }

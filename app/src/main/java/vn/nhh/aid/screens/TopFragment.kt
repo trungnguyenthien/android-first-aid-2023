@@ -55,7 +55,7 @@ class TopFragment : BaseFragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         btnSoCuu().setOnClickListener {
-            pushPageStack(fragment = EvaluateProblemFragment.newInstance("", ""))
+            pushPageStack(fragment = EvaluateProblemFragment())
         }
 
         btnTinHieu().setOnClickListener {

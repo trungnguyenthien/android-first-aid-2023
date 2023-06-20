@@ -1,13 +1,12 @@
 package vn.nhh.aid
 
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import androidx.appcompat.app.AppCompatActivity
 import androidx.fragment.app.FragmentManager
 import vn.nhh.aid.screens.BaseFragment
+import vn.nhh.aid.screens.EvaluateProblemFragment
 import vn.nhh.aid.screens.PreventBack
 import vn.nhh.aid.screens.TopFragment
-import vn.nhh.aid.utils.makeHbfFragment
-import vn.nhh.aid.utils.makeMessageToggleButton
 
 private var shareInstance: MainActivity? = null
 class MainActivity : AppCompatActivity() {
@@ -15,16 +14,7 @@ class MainActivity : AppCompatActivity() {
         shareInstance = this
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
-
-        val frag = makeHbfFragment(
-            create = {
-
-            },
-            resume = {
-
-            },
-        )
-        pushPageStack(frag)
+        pushPageStack(TopFragment())
     }
 
     override fun onBackPressed() {

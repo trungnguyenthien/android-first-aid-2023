@@ -9,7 +9,7 @@ import androidx.appcompat.widget.LinearLayoutCompat
 import com.squareup.picasso.Picasso
 import vn.nhh.aid.R
 
-class StepImageComponent(context: Context, attrs: AttributeSet) : LinearLayoutCompat(context, attrs) {
+class StepImageComponent(context: Context) : LinearLayoutCompat(context) {
     init {
         LayoutInflater.from(context).inflate(R.layout.layout_step_image, this)
     }

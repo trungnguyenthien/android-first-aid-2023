@@ -7,7 +7,7 @@ import androidx.appcompat.widget.AppCompatTextView
 import androidx.appcompat.widget.LinearLayoutCompat
 import vn.nhh.aid.R
 
-class StepTextComponent(context: Context, attrs: AttributeSet) : LinearLayoutCompat(context, attrs) {
+class StepTextComponent(context: Context) : LinearLayoutCompat(context) {
     init {
         LayoutInflater.from(context).inflate(R.layout.layout_step_text, this)
     }
