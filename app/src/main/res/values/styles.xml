@@ -1,4 +1,7 @@
 <resources>
+    <style name="MessageToggleButtonStyle" parent="android:Widget.Button.Toggle">
+        <item name="android:background">@drawable/message_toggle_button</item>
+    </style>
 
     <style name="Widget.Theme.FirstAid.MyView" parent="">
         <item name="android:background">@color/gray_400</item>
@@ -11,8 +14,8 @@
         <!-- Các thuộc tính khác của theme -->
     </style>
 
-    <style name="MessageToggleButtonStyle" parent="android:Widget.Button.Toggle">
-        <item name="android:background">@drawable/message_toggle_button</item>
+    <style name="Widget.Theme.FirstAid.ButtonBar.Fullscreen" parent="">
+        <item name="android:background">@color/ghost_white</item>
+        <item name="android:buttonBarStyle">?android:attr/buttonBarStyle</item>
     </style>
-
 </resources>

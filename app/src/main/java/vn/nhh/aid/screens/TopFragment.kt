@@ -59,7 +59,7 @@ class TopFragment : BaseFragment() {
         }
 
         btnTinHieu().setOnClickListener {
-            pushPageStack(fragment = SignalFragment.newInstance("", ""))
+//            pushPageStack(fragment = SignalFragment.newInstance("", ""))
         }
     }
 

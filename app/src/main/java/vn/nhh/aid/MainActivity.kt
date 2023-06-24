@@ -1,12 +1,11 @@
 package vn.nhh.aid
 
+import android.annotation.SuppressLint
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
+import androidx.fragment.app.Fragment
 import androidx.fragment.app.FragmentManager
-import vn.nhh.aid.screens.BaseFragment
-import vn.nhh.aid.screens.EvaluateProblemFragment
-import vn.nhh.aid.screens.PreventBack
-import vn.nhh.aid.screens.TopFragment
+import vn.nhh.aid.screens.*
 
 private var shareInstance: MainActivity? = null
 class MainActivity : AppCompatActivity() {
@@ -14,7 +13,7 @@ class MainActivity : AppCompatActivity() {
         shareInstance = this
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
-        pushPageStack(TopFragment())
+        pushPageStack(HomeFragment())
     }
 
     override fun onBackPressed() {
@@ -25,6 +24,17 @@ class MainActivity : AppCompatActivity() {
             if (!fragment.allowBack()) return
         }
         super.onBackPressed()
+    }
+
+    @SuppressLint("CommitTransaction")
+    public fun replaceFragment(fragment: Fragment) {
+
+        val fragmentManager = supportFragmentManager
+        val fragmentTransaction = fragmentManager.beginTransaction()
+
+        fragmentTransaction.replace(R.id.fragment_container, fragment)
+        fragmentTransaction.commit()
+
     }
 }
 

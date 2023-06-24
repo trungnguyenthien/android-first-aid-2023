@@ -9,7 +9,6 @@ import androidx.appcompat.widget.LinearLayoutCompat
 import androidx.fragment.app.FragmentManager
 import vn.nhh.aid.R
 
-
 open class BaseListFragment : BaseFragment(), PreventBack {
     lateinit var headerLinearLayout: LinearLayoutCompat
     lateinit var footerLinearLayout: LinearLayoutCompat

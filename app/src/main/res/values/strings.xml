@@ -3,4 +3,21 @@
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
     <string name="label_so_cap_cuu">SƠ CỨU</string>
+    <string name="dummy_button">Dummy Button</string>
+    <string name="dummy_content">DUMMY\nCONTENT</string>
+
+    <string-array name="lesson_name_txt">
+        <item>SAMPLE_NAME1</item>
+        <item>SAMPLE_NAME2</item>
+    </string-array>
+
+    <string-array name="lesson_description_txt">
+        <item>SAMPLE_DESC1</item>
+        <item>SAMPLE_DESC2</item>
+    </string-array>
+
+    <string-array name="lesson_content_txt">
+        <item>SAMPLE_CONTENT1</item>
+        <item>SAMPLE_CONTENT2</item>
+    </string-array>
 </resources>
