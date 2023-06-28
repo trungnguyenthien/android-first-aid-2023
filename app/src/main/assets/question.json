@@ -1,0 +1,152 @@
+{
+    "question": "Vị trí cụ thể hay không?",
+    "options": [
+      {
+        "answer": "Co",
+        "question": "Dau hieu?",
+        "options": [
+          {
+            "answer": "Mot ben mat tay bi liet",
+            "question": null,
+            "options": [
+              {
+                "answer": "Dot quy",
+                "guideline": "001"
+              }
+            ]
+          },
+          {
+            "answer": "Tim Dap nhanh",
+            "question": null,
+            "options": [
+              {
+                "answer": "Ha duong huyet",
+                "guideline": "002"
+              }
+            ]
+          },
+          {
+            "answer": "Mieng luoi bi kho",
+            "question": null,
+            "options": [
+              {
+                "answer": "Mat nuoc",
+                "guideline": "003"
+              }
+            ]
+          },
+          {
+            "answer": "Kho tho/Khong tho",
+            "question": null,
+            "options": [
+              {
+                "answer": "Bất tỉnh, không có mạch",
+                "guideline": "004"
+              },
+              {
+                "answer":"Môi, lưỡi tím tái",
+                "guideline":"005"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "answer": "khong",
+        "question":null,
+        "options":[
+            {
+                "answer": "than tren",
+                "question": null,
+                "options":[
+                    {
+                        "answer": "Da do, xuat hien not phong",
+                        "guideline": "006"
+                    },
+                    {
+                        "answer": "Co vet bam xuong bi lech",
+                        "question": null,
+                        "options":[
+                            {
+                                "answer": "Canh tay",
+                                "guideline": "007"
+                            },
+                            {
+                                "answer": "cang tay",
+                                "guideline": "08"
+                            }
+
+                        ]
+                    },
+                    {
+                        "answer": "Chay mau",
+                        "question": null,
+                        "options":[
+                            {
+                                "answer": "Chi thang",
+                                "guideline": "009"
+                            },
+                            {
+                                "answer": "khop",
+                                "guideline": "010"
+                            }
+                        ]
+                    }
+                ]
+            },
+            {
+                "answer": "dau co",
+                "quesion": "Da do, xuat hien noi phong",
+                "options":[
+                    {
+                        "answer": "Co",
+                        "guideline": "011"
+                    },
+                    {
+                        "answer": "khong",
+                        "guideline": "012"
+                    }
+                ]
+            },{
+                "answer": "Than duoi",
+                "quesion": null,
+                "options":[
+                    {
+                        "answer": "Da do, xuat hien not phong",
+                        "guideline": "013"
+                    },
+                    {
+                        "answer": "Co vet bam xuong bi lech",
+                        "question": null,
+                        "options":[
+                            {
+                                "answer": "Canh tay",
+                                "guideline": "014"
+                            },
+                            {
+                                "answer": "cang tay",
+                                "guideline": "015"
+                            }
+
+                        ]
+                    },
+                    {
+                        "answer": "Chay mau",
+                        "question": null,
+                        "options":[
+                            {
+                                "answer": "Chi thang",
+                                "guideline": "016"
+                            },
+                            {
+                                "answer": "khop",
+                                "guideline": "017"
+                            }
+                        ]
+                    }
+                ]
+            }
+        ]
+      }
+    ]
+  }
