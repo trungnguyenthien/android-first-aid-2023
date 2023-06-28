@@ -48,14 +48,14 @@
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:orientation="vertical"
-                android:layout_marginLeft="30dp"
-                android:layout_marginRight="30dp">
+                android:layout_marginLeft="50dp"
+                android:layout_marginRight="50dp">
 
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:layout_marginTop="20dp"
-                    android:background="@drawable/round_gray_setting_card"
+                    android:background="@drawable/round_setting_card"
                     android:orientation="vertical"
                     android:padding="15dp">
 
@@ -83,6 +83,13 @@
 
                     </RelativeLayout>
 
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="2dp"
+                        android:layout_marginStart="12dp"
+                        android:layout_marginEnd="12dp"
+                        android:background="@color/lavender"/>
+
                     <RelativeLayout
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content">
@@ -107,7 +114,7 @@
                         <Switch
                             android:id="@+id/Switch1"
                             android:layout_width="wrap_content"
-                            android:layout_height="48dp"
+                            android:layout_height="wrap_content"
                             android:layout_alignParentEnd="true"
                             android:layout_centerVertical="true"
                             android:switchMinWidth="50dp"
@@ -140,7 +147,7 @@
                         <Switch
                             android:id="@+id/Switch2"
                             android:layout_width="wrap_content"
-                            android:layout_height="48dp"
+                            android:layout_height="wrap_content"
                             android:layout_alignParentEnd="true"
                             android:layout_centerVertical="true"
                             android:switchMinWidth="50dp"
@@ -173,7 +180,7 @@
                         <Switch
                             android:id="@+id/Switch3"
                             android:layout_width="wrap_content"
-                            android:layout_height="48dp"
+                            android:layout_height="wrap_content"
                             android:layout_alignParentEnd="true"
                             android:layout_centerVertical="true"
                             android:switchMinWidth="50dp"
@@ -188,7 +195,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:layout_marginTop="20dp"
-                    android:background="@drawable/round_gray_setting_card"
+                    android:background="@drawable/round_setting_card"
                     android:orientation="vertical"
                     android:padding="15dp">
 
@@ -214,6 +221,13 @@
                             android:textColor="@color/glaucous"
                             android:textStyle="bold" />
                     </RelativeLayout>
+
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="2dp"
+                        android:layout_marginStart="12dp"
+                        android:layout_marginEnd="12dp"
+                        android:background="@color/lavender"/>
 
                     <RelativeLayout
                         android:id="@+id/SettingField1"

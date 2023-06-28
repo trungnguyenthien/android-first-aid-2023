@@ -10,6 +10,8 @@ import android.view.WindowManager
 import android.widget.Button
 import androidx.appcompat.app.AppCompatActivity
 import androidx.fragment.app.Fragment
+import androidx.recyclerview.widget.LinearLayoutManager
+import androidx.recyclerview.widget.RecyclerView
 import vn.nhh.aid.databinding.FragmentEmergencyBinding
 
 /**
@@ -71,8 +73,15 @@ class EmergencyFragment : Fragment() {
         savedInstanceState: Bundle?
     ): View? {
 
-        _binding = FragmentEmergencyBinding.inflate(inflater, container, false)
-        return binding.root
+        val view = inflater.inflate(R.layout.fragment_emergency, container, false)
+
+        // Add the following lines to create RecyclerView
+        val recyclerView = view.findViewById<RecyclerView>(R.id.mcRecyclerView)
+        recyclerView.setHasFixedSize(true)
+        recyclerView.layoutManager = LinearLayoutManager(view.context)
+        recyclerView.adapter = EmergencyRecyclerViewAdapter()
+
+        return view
 
     }
 
@@ -80,17 +89,6 @@ class EmergencyFragment : Fragment() {
         super.onViewCreated(view, savedInstanceState)
 
         visible = true
-
-        dummyButton = binding.dummyButton
-        fullscreenContent = binding.fullscreenContent
-        fullscreenContentControls = binding.fullscreenContentControls
-        // Set up the user interaction to manually show or hide the system UI.
-        fullscreenContent?.setOnClickListener { toggle() }
-
-        // Upon interacting with UI controls, delay any scheduled hide()
-        // operations to prevent the jarring behavior of controls going away
-        // while interacting with the UI.
-        dummyButton?.setOnTouchListener(delayHideTouchListener)
     }
 
     override fun onResume() {

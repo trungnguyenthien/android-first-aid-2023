@@ -64,35 +64,9 @@ class LessonFragment : Fragment() {
 
     private var fullscreenContent: View? = null
     private var fullscreenContentControls: View? = null
-
     private var _binding: FragmentLessonBinding? = null
 
-    // This property is only valid between onCreateView and
-    // onDestroyView.
     private val binding get() = _binding!!
-
-    /*
-    override fun onCreateView(
-        inflater: LayoutInflater,
-        container: ViewGroup?,
-        savedInstanceState: Bundle?
-    ): View {
-
-        val binding: FragmentLessonBinding = FragmentLessonBinding.inflate(layoutInflater)
-        val recyclerView: RecyclerView = binding.lessonRecyclerView
-
-        setUpLessonModel()
-
-        val adapter = LessonRecyclerViewAdapter(requireContext(), lessonList)
-        val layoutManager = LinearLayoutManager(requireContext())
-        layoutManager.orientation = LinearLayoutManager.VERTICAL
-
-        recyclerView.adapter = adapter
-        recyclerView.layoutManager = layoutManager
-
-        return binding.root
-    }
-     */
 
     private lateinit var recyclerView: RecyclerView
     override fun onCreateView(
@@ -110,23 +84,6 @@ class LessonFragment : Fragment() {
 
         return view
     }
-
-    /*
-    private fun setUpLessonModel() {
-        val lessonNames = resources.getStringArray(R.array.lesson_name_txt)
-        val lessonDesc = resources.getStringArray(R.array.lesson_description_txt)
-
-        for (i in lessonNames.indices) {
-            lessonList.add(LessonModel(
-                lessonNames[i],
-                lessonDesc[i],
-                )
-            )
-        }
-    }
-     */
-
-
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
