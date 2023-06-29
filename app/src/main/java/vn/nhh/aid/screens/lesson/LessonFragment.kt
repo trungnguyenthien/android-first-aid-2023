@@ -65,11 +65,8 @@ class LessonFragment : BaseFragment() {
 
     private var fullscreenContent: View? = null
     private var fullscreenContentControls: View? = null
-
     private var _binding: FragmentLessonBinding? = null
 
-    // This property is only valid between onCreateView and
-    // onDestroyView.
     private val binding get() = _binding!!
 
     private lateinit var recyclerView: RecyclerView
