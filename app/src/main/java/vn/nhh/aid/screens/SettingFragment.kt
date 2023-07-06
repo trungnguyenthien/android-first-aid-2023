@@ -1,6 +1,5 @@
 package vn.nhh.aid.screens
 
-import android.annotation.SuppressLint
 import android.os.Bundle
 import android.os.Handler
 import android.os.Looper
@@ -9,12 +8,7 @@ import android.view.View
 import android.view.ViewGroup
 import android.view.WindowManager
 import android.widget.Button
-import android.widget.RelativeLayout
-import android.widget.Switch
-import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity
-import androidx.appcompat.widget.AppCompatButton
-import androidx.appcompat.widget.AppCompatTextView
 import androidx.fragment.app.Fragment
 import vn.nhh.aid.databinding.FragmentSettingBinding
 
@@ -82,63 +76,21 @@ class SettingFragment : BaseFragment() {
 
     }
 
-    @SuppressLint("UseSwitchCompatOrMaterialCode")
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
         visible = true
 
-        val userInfoButton: TextView = view.findViewById(R.id.UserInfoButton)
-        userInfoButton.setOnClickListener {
-            // Code when the UserInfoButton is clicked
-        }
+        dummyButton = binding.dummyButton
+        fullscreenContent = binding.fullscreenContent
+        fullscreenContentControls = binding.fullscreenContentControls
+        // Set up the user interaction to manually show or hide the system UI.
+        fullscreenContent?.setOnClickListener { toggle() }
 
-        val editProfileButton: AppCompatButton = view.findViewById(R.id.EditProfileButton)
-        editProfileButton.setOnClickListener {
-            // Code when the EditProfileButton is clicked
-        }
-
-        val switch1: Switch = view.findViewById(R.id.Switch1)
-        switch1.setOnCheckedChangeListener { buttonView, isChecked ->
-            if (isChecked) {
-                // Switch 1 is checked
-            } else {
-                // Switch 1 is unchecked
-            }
-        }
-
-        val switch2: Switch = view.findViewById(R.id.Switch2)
-        switch2.setOnCheckedChangeListener { buttonView, isChecked ->
-            if (isChecked) {
-                // Switch 2 is checked
-            } else {
-                // Switch 2 is unchecked
-            }
-        }
-
-        val switch3: Switch = view.findViewById(R.id.Switch3)
-        switch3.setOnCheckedChangeListener { buttonView, isChecked ->
-            if (isChecked) {
-                // Switch 3 is checked
-            } else {
-                // Switch 3 is unchecked
-            }
-        }
-
-        val settingField1: RelativeLayout = view.findViewById(R.id.SettingField1)
-        settingField1.setOnClickListener {
-            // Code when the RelativeLayout is clicked
-        }
-
-        val settingField2: RelativeLayout = view.findViewById(R.id.SettingField2)
-        settingField2.setOnClickListener {
-            // Code when the RelativeLayout is clicked
-        }
-
-        val settingField3: RelativeLayout = view.findViewById(R.id.SettingField3)
-        settingField3.setOnClickListener {
-            // Code when the RelativeLayout is clicked
-        }
+        // Upon interacting with UI controls, delay any scheduled hide()
+        // operations to prevent the jarring behavior of controls going away
+        // while interacting with the UI.
+        dummyButton?.setOnTouchListener(delayHideTouchListener)
     }
 
     override fun onResume() {

@@ -1,4 +1,7 @@
 <resources>
+    <style name="MessageToggleButtonStyle" parent="android:Widget.Button.Toggle">
+        <item name="android:background">@drawable/message_toggle_button</item>
+    </style>
 
     <style name="Widget.Theme.FirstAid.MyView" parent="">
         <item name="android:background">@color/gray_400</item>
@@ -15,10 +18,4 @@
         <item name="android:background">@color/ghost_white</item>
         <item name="android:buttonBarStyle">?android:attr/buttonBarStyle</item>
     </style>
-
-    <style name="SettingSwitchStyle" parent="">
-        <item name="android:thumbTint">@color/glaucous</item>
-        <item name="android:trackTint">@color/powder_blue</item>
-    </style>
-
 </resources>
