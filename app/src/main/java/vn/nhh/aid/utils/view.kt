@@ -15,7 +15,6 @@ import com.google.android.material.shape.MaterialShapeDrawable
 import com.squareup.picasso.Picasso
 import vn.nhh.aid.R
 import vn.nhh.aid.shareMainActivity
-import vn.nhh.aid.views.ImageTextComponent
 import java.util.regex.Pattern
 
 //AIzaSyDiL3mPyOIdtvSxChQkilRcVhi58fUQi1o
@@ -30,13 +29,6 @@ fun standardShapableImageView(imageView: ShapeableImageView) {
         .build()
 
     imageView.shapeAppearanceModel = shapeAppearanceModel
-}
-
-fun makeMessageText(context: Context, text: String, image: String? = null) = ImageTextComponent(context).apply {
-    image?.let {
-        this.setImageUrl(it)
-    }
-    this.setText(text)
 }
 
 fun makeMessageToggleButton(context: Context, text: String) = ToggleButton(context).apply {

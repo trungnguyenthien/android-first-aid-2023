@@ -14,8 +14,6 @@ open class BaseListFragment : BaseFragment(), PreventBack {
     lateinit var footerLinearLayout: LinearLayoutCompat
     lateinit var bodyLinearLayout: LinearLayoutCompat
 
-    var onViewCreatedFunc: () -> Unit = {}
-
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
@@ -27,11 +25,6 @@ open class BaseListFragment : BaseFragment(), PreventBack {
             footerLinearLayout = it.findViewById(R.id.linear_footer)
             bodyLinearLayout = it.findViewById(R.id.linear_option)
         }
-    }
-
-    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
-        super.onViewCreated(view, savedInstanceState)
-        onViewCreatedFunc.invoke()
     }
 
     override fun handleBackPressed(fmanager: FragmentManager) {

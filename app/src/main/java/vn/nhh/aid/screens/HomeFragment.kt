@@ -13,7 +13,6 @@ import androidx.appcompat.app.AppCompatActivity
 import vn.nhh.aid.R
 import vn.nhh.aid.databinding.FragmentHomeBinding
 import vn.nhh.aid.pushPageStack
-import vn.nhh.aid.screens.sample.SampleViewPagerFragment
 
 /**
  * An example full-screen fragment that shows and hides the system UI (i.e.
@@ -71,7 +70,7 @@ class HomeFragment : BaseFragment() {
         val centerButton: ImageButton = view.findViewById(R.id.center_button)
 
         centerButton.setOnClickListener {
-            pushPageStack(SampleViewPagerFragment())
+            pushPageStack(EnvironmentEvaluateFragment.newInstance(""))
         }
     }
 

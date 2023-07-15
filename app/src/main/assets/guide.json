@@ -1,0 +1,52 @@
+[
+    {
+        "guideId": "001",
+        "ProName": "Đột quỵ",
+        "Steps": [
+            {
+                "Instruction": "Placeholder",
+                "type": "Image|videos",
+                "url": null,
+                "size": "480:360"
+            },
+            {
+                "Instruction": "Placeholder",
+                "type": "Image|videos",
+                "url": null,
+                "size": "480:360"
+            },
+            {
+                "Instruction": "Placeholder",
+                "type": "Image|videos",
+                "url": null,
+                "size": "480:360"
+            }
+        ]
+    },
+    {
+        "guideId": "002",
+        "ProName": "BALL",
+        "Steps": [
+            {
+                "Instruction": "Placeholder",
+                "type": "Image|videos",
+                "url": null,
+                "size": "480:360"
+            },
+            {
+                "Instruction": "Placeholder",
+                "type": "Image|videos",
+                "url": null,
+                "size": "480:360"
+            },
+            {
+                "Instruction": "Placeholder",
+                "type": "Image|videos",
+                "url": null,
+                "size": "480:360"
+            }
+        ]
+    }
+]
+
+
