@@ -7,7 +7,7 @@
     android:orientation="vertical"
     android:background="@color/mongolia"
     android:theme="@style/ThemeOverlay.FirstAid.FullscreenContainer"
-    tools:context=".screens.HomeFragment">
+    tools:context=".screens.EnvironmentEvaluateFragment">
 
     <TextView
         android:layout_width="match_parent"
@@ -23,22 +23,30 @@
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
-        android:layout_height="450dp"
-        android:layout_marginStart="50dp"
+        android:layout_height="515dp">
 
-        android:layout_marginTop="60dp"
-        android:layout_marginEnd="50dp">
-
-        <androidx.recyclerview.widget.RecyclerView
-            android:id="@+id/Fuckyou_líst"
-            android:layout_width="320dp"
+        <androidx.appcompat.widget.AppCompatTextView
+            android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:visibility="visible"
+            android:autoSizeMaxTextSize="100sp"
+            android:autoSizeMinTextSize="23sp"
+            android:autoSizeStepGranularity="10sp"
+            android:autoSizeTextType="uniform"
+            android:ellipsize="end"
+            android:gravity="center"
+            android:inputType="textMultiLine"
+            android:maxLines="5"
+            android:textColor="@color/black"
+            android:paddingStart="15dp"
+            android:paddingTop="10dp"
+            android:singleLine="false"
+            android:text="- Đánh giá hiện trường \n- Vỗ vào vai và gọi to \n- Gọi hỗ trợ và gọi 115 \n- Ấn trán, nâng cằm \n- Ghé tai vào miệng, cảm nhận hơi thở \n- KIểm tra mạch"
+            android:textAlignment="viewStart"
             app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.0" />
+            tools:layout_editor_absoluteX="-16dp" />
+
+
     </androidx.constraintlayout.widget.ConstraintLayout>
 
     <androidx.appcompat.widget.AppCompatButton
@@ -46,9 +54,21 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="center"
-        android:layout_marginTop="20dp"
+        android:layout_marginTop="255dp"
         android:paddingStart="30dp"
         android:paddingEnd="30dp"
-        android:text="I Know"
+        android:text="Skip"
         android:textAllCaps="false" />
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/detail_button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_marginTop="200dp"
+        android:paddingStart="30dp"
+        android:paddingEnd="30dp"
+        android:text="Chi tiết"
+        android:textAllCaps="false" />
+
 </FrameLayout>

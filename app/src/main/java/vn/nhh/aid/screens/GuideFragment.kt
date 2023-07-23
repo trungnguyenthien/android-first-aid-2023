@@ -21,7 +21,7 @@ class GuideFragment : BaseFragment() {
     private var guideId: String? = null
     private var guideObject: Guide? = null
     private var Lstep: List<Step>? = emptyList()
-    var viewPager: ViewPager? = null
+    private lateinit var viewPager: ViewPager
     lateinit var viewPagerAdapter: ViewPagerAdapter
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -41,14 +41,15 @@ class GuideFragment : BaseFragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        requireActivity().title = "Câu hỏi đánh giá"
+        requireActivity().title = "Hướng dẫn sơ cấp cứu"
 
         val text = guideObject?.Proname
         val TxtView:TextView = view.findViewById(R.id.title_tv)
         TxtView.text = text
+        viewPager = view.findViewById(R.id.idViewPager)
         Lstep = guideObject?.Steps
         viewPagerAdapter = ViewPagerAdapter(requireContext(), Lstep)
-        viewPager?.adapter = viewPagerAdapter
+        viewPager.adapter = viewPagerAdapter
 
     }
 
