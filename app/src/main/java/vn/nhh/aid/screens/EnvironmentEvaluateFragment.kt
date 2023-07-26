@@ -23,13 +23,9 @@ class EnvironmentEvaluateFragment: BaseFragment() {
         super.onViewCreated(view, savedInstanceState)
 
         val SkipButton: Button = view.findViewById(R.id.skip_button)
-        val DetailButton: Button = view.findViewById(R.id.detail_button)
 
         SkipButton.setOnClickListener {
             pushPageStack(DangerleveljudgeFragment.newInstance())
-        }
-        DetailButton.setOnClickListener {
-            pushPageStack(EdetailsFragment.newInstance())
         }
     }
 
