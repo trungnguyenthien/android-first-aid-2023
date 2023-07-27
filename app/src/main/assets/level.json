@@ -1,0 +1,61 @@
+[
+    {
+        "Level": "1",
+        "Options": [
+            {
+                "Option": "Ngừng tuần hoàn",
+                "Symptoms": "Nạn nhân không tỉnh táo, không thở và không có mạch",
+                "guideline": ""
+            },
+            {
+                "Option": "Hóc dị vật đường thở",
+                "Symptoms": "Nạn nhân ho sặc sụa và liên tục, Nạn nhân khó thở, khó nói, Nạn nhân bám tay vào cổ, Môi, miệng, ngón tay tím tái, Đại tiểu tiện không tự chủ"
+            },
+            {
+                "Option": "Chảy máu nghiêm trọng",
+                "Symptoms": "Chảy máu ở cổ"
+            },
+            {
+                "Option": "Đột quỵ",
+                "Symptoms": "Mắt nhắm không kín, miệng cười lệch, Yếu hoặc liệt một bên tay, Nói không rõ ràng"
+
+            },
+            {
+                "Option": "Hạ đường huyết",
+                "Symptoms": "Hoa mắt, chóng mặt, bồn chồn, trống ngực đập liên hồi, Có cảm giác đói, Mệt mỏi một cách đột ngột, bất thường"
+
+            }
+        ]
+    },
+    {
+        "Level": "0",
+        "Options": [
+            {
+                "Option": "Bỏng",
+                "Symptoms": "Bỏng độ 1: da sưng đỏ kèm theo đau, Bỏng Độ 2: da đỏ, xuất hiện nốt phồng"
+            },
+            {
+                "Option": "Chảy máu",
+                "Symptoms": null
+            },
+            {
+                "Option": "Co giật",
+                "Symptoms": null
+            },
+            {
+                "Option": "Gãy xương",
+                "Symptoms": "Có vết bầm và sưng, xương bị lệch, Khó cử động, hạn chế di chuyển, Có điểm đau chói, Xương lòi ra ngoài, chảy máu (gãy xương hở)"
+            },
+            {
+                "Option": "Mất nước ở trẻ",
+                "Symptoms": "Dấu hiệu mất nước nhẹ, trung bình: Trẻ khóc không có nước mắt, Miệng và lưỡi khô, sờ thấy thô ráp, Khát nước, mắt bị trũng, Véo da ở đùi, bụng thầy vết véo mất chậm dưới 2 giây, Dấu hiệu mất nước nặng: Li bì, hôn mê, mệt lả, Mắt trũng và rất khô, Miệng lười rất khô, Véo da ở đùi, bụng thầy vết véo mất chậm trên 2 giây"
+            },
+            {
+                "Option": "Sốt cao",
+                "Symptoms": null
+            }
+        ]
+    }
+]
+
+
