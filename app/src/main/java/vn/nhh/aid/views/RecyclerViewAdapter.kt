@@ -9,13 +9,13 @@ import vn.nhh.aid.R
 import vn.nhh.aid.screens.DangerlevelFragment
 
 class RecyclerViewAdapter(
-    private val ProList: List<DangerlevelFragment.Procedure>,
+    private val ProList: List<DangerlevelFragment.Procedure>?,
     private val listener: OnItemClickListener
 ) :
     RecyclerView.Adapter<RecyclerViewAdapter.ItemViewHolder>() {
     inner class ItemViewHolder(itemView: View): RecyclerView.ViewHolder(itemView), View.OnClickListener{
-        val ProText : TextView = itemView.findViewById(R.id.Name)
-        val SypText : TextView = itemView.findViewById(R.id.Desc)
+        val proText : TextView = itemView.findViewById(R.id.Name)
+        val sypText : TextView = itemView.findViewById(R.id.Desc)
 
         init{
             itemView.setOnClickListener(this)
@@ -34,16 +34,16 @@ class RecyclerViewAdapter(
     }
 
     override fun getItemCount(): Int {
-        return ProList.size
+        return ProList!!.size
     }
 
     override fun onBindViewHolder(holder: ItemViewHolder, position: Int) {
-        val procedure = ProList[position]
+        val procedure = ProList!![position]
         if (procedure.Symptoms == "null"){
-            holder.SypText.visibility = View.GONE
+            holder.sypText.visibility = View.GONE
         }
-        holder.ProText.text = procedure.Name
-        holder.SypText.text = procedure.Symptoms
+        holder.proText.text = procedure.Name
+        holder.sypText.text = procedure.Symptoms
     }
     interface OnItemClickListener{
         fun onItemClick(position: Int)

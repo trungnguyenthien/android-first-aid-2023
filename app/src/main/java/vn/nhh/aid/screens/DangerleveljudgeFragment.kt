@@ -29,10 +29,10 @@ class DangerleveljudgeFragment: BaseFragment() {
             pushPageStack(EvaluateProblemFragment.newInstance(""))
         }
         HighDanger.setOnClickListener {
-            pushPageStack(DangerlevelFragment.newInstance(0))
+            pushPageStack(DangerlevelFragment.newInstance(0, -1))
         }
         LowDanger.setOnClickListener {
-            pushPageStack(DangerlevelFragment.newInstance(1))
+            pushPageStack(DangerlevelFragment.newInstance(1, -1))
         }
     }
 

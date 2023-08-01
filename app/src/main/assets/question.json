@@ -1,101 +1,111 @@
 {
-  "question": "Vị trí cụ thể hay không?",
+  "question": "Có vết thương ở vị trí cụ thể không?",
   "options": [
     {
-      "answer": "co",
-      "question":null,
+      "answer": "Có",
+      "question":"Nạn nhân có dấu hiệu nào?",
       "options":[
         {
-          "answer": "Bong",
-          "guideline": "006"
+          "answer": "Da đỏ, xuất hiện nốt phồng",
+          "guideline": "010"
         },
         {
-          "answer": "gay xuong",
-          "quesion": "vi tri cu the",
+          "answer": "Có vết bầm, xương bị lệch",
+          "question": "Vị trí bị thương?",
           "options":[
             {
-              "answer": "canh tay",
-              "guideline": "007"
+              "answer": "Cánh tay",
+              "guideline": "011"
             },
             {
-              "answer": "cang tay",
-              "guideline": "008"
+              "answer": "Cẳng tay",
+              "guideline": "012"
             },
             {
-              "answer": "dui",
+              "answer": "Đùi",
+              "guideline": "013"
+            },
+            {
+              "answer": "Cẳng chân",
               "guideline": "014"
-            },
-            {
-              "answer": "cang chan",
-              "guideline": "015"
             }
           ]
         },
         {
-          "answer": "chay mau",
-          "quesion": "vi tri cu the",
+          "answer": "Chảy máu",
+          "question": "Vị trí bị thương?",
           "options": [
             {
-              "answer": "chi thang",
-              "guideline": "009"
+              "answer": "Cổ",
+              "guideline": "015"
             },
             {
-              "answer": "khop",
-              "guideline": "010"
+              "answer": "Chi thẳng",
+              "guideline": "016"
             },
             {
-              "answer": "co",
-              "guideline": "012"
+              "answer": "Khớp",
+              "guideline": "017"
             }
           ]
         }
       ]
     },
     {
-      "answer": "khong",
-      "question": "Dau hieu?",
+      "answer": "Không",
+      "question": "Nạn nhân có dấu hiệu nào?",
       "options": [
         {
-          "answer": "Mot ben mat tay bi liet",
-          "question": null,
-          "options": [
-            {
-              "answer": "Dot quy",
-              "guideline": "001"
-            }
-          ]
+          "answer": "Một bên mặt hoặc tay bị liệt",
+          "guideline": "001"
         },
         {
-          "answer": "Tim Dap nhanh",
-          "question": null,
-          "options": [
-            {
-              "answer": "Ha duong huyet",
-              "guideline": "002"
-            }
-          ]
+          "answer": "Tim đập nhanh, mệt mỏi, chóng mặt",
+          "guideline": "002"
         },
         {
-          "answer": "Mieng luoi bi kho",
-          "question": null,
-          "options": [
-            {
-              "answer": "Mat nuoc",
-              "guideline": "003"
-            }
-          ]
+          "answer": "Miệng lưỡi bị khô",
+          "guideline": "003"
         },
         {
-          "answer": "Kho tho/Khong tho",
-          "question": null,
+          "answer": "Khó thở/Không thở",
+          "question": "Dấu hiệu?",
           "options": [
             {
               "answer": "Bất tỉnh, không có mạch",
-              "guideline": "004"
+              "question": "Đối tượng?",
+              "options": [
+                {
+                  "answer": "Người trưởng thành",
+                  "guideline": "004"
+                },
+                {
+                  "answer": "Trẻ từ 1 tuổi đến tuổi dậy thì",
+                  "guideline": "005"
+                },
+                {
+                  "answer": "Trẻ dưới 1 tuổi",
+                  "guideline": "006"
+                }
+              ]
             },
             {
               "answer":"Môi, lưỡi tím tái",
-              "guideline":"005"
+              "question": "Trường hợp?",
+              "options": [
+                {
+                  "answer": "Người trưởng thành",
+                  "guideline": "007"
+                },
+                {
+                  "answer": "Chỉ có một mình",
+                  "guideline": "008"
+                },
+                {
+                  "answer": "Trẻ dưới 1 tuổi",
+                  "guideline": "009"
+                }
+              ]
             }
           ]
         }
