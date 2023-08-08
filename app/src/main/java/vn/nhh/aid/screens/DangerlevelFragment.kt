@@ -52,8 +52,8 @@ class DangerlevelFragment: BaseFragment(), RecyclerViewAdapter.OnItemClickListen
         recyclerview.layoutManager = LinearLayoutManager(requireContext())
         val title: TextView = view.findViewById(R.id.textView)
         if (position != -1){
-            prolist = prolist?.get(position)?.options
             title.text = prolist?.get(position)?.question
+            prolist = prolist?.get(position)?.options
         } else if (level == 0){
             title.text = "Các bênh nguy hiểm đến tính mạng"
         } else { title.text = "Các bệnh có thể trì hoãn"}

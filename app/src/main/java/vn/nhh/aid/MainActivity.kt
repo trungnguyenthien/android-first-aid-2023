@@ -9,11 +9,16 @@ import vn.nhh.aid.screens.*
 
 private var shareInstance: MainActivity? = null
 class MainActivity : AppCompatActivity() {
+    var firstTime: Boolean = true
     override fun onCreate(savedInstanceState: Bundle?) {
         shareInstance = this
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
-        pushPageStack(HomeFragment())
+        if (!firstTime){
+            pushPageStack(HomeFragment())
+        }
+        firstTime = false
+        pushPageStack(InfoFragment())
     }
 
     override fun onBackPressed() {
