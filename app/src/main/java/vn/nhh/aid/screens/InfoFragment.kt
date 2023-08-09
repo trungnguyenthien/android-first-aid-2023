@@ -34,6 +34,7 @@ class InfoFragment: BaseFragment() {
                 editor?.apply{
                     putString("ten_nguoi_dung", ten)
                     putString("dien_thoai", dienthoai)
+                    putBoolean("my_first_time", false)
                 }
                 pushPageStack(HomeFragment())
             }

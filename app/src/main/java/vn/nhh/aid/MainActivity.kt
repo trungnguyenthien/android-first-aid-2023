@@ -1,6 +1,7 @@
 package vn.nhh.aid
 
 import android.annotation.SuppressLint
+import android.content.SharedPreferences
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import androidx.fragment.app.Fragment
@@ -9,16 +10,16 @@ import vn.nhh.aid.screens.*
 
 private var shareInstance: MainActivity? = null
 class MainActivity : AppCompatActivity() {
-    var firstTime: Boolean = true
     override fun onCreate(savedInstanceState: Bundle?) {
         shareInstance = this
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
-        if (!firstTime){
+        val sharedPref = getSharedPreferences("UserInfo", MODE_PRIVATE)
+        var check: Boolean = sharedPref.getBoolean("my_first_time", true)
+        if (check){
             pushPageStack(HomeFragment())
         }
-        firstTime = false
-        pushPageStack(InfoFragment())
+        else pushPageStack(InfoFragment())
     }
 
     override fun onBackPressed() {
