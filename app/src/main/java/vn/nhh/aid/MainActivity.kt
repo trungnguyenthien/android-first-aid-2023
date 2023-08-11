@@ -1,6 +1,7 @@
 package vn.nhh.aid
 
 import android.annotation.SuppressLint
+import android.content.Intent
 import android.content.SharedPreferences
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
@@ -15,11 +16,15 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
         val sharedPref = getSharedPreferences("UserInfo", MODE_PRIVATE)
-        var check: Boolean = sharedPref.getBoolean("my_first_time", true)
+        val check: Boolean = sharedPref.getBoolean("my_first_time", true)
         if (check){
             pushPageStack(HomeFragment())
         }
         else pushPageStack(InfoFragment())
+    }
+
+    override fun onNewIntent(intent: Intent?) {
+        super.onNewIntent(intent)
     }
 
     override fun onBackPressed() {

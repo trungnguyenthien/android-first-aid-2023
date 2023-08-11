@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "427380420118",
+    "project_id": "first-aid-c8f8e",
+    "storage_bucket": "first-aid-c8f8e.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:427380420118:android:c58638fcb69a26adc70f37",
+        "android_client_info": {
+          "package_name": "vn.nhh.aid"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "427380420118-i30vupm7ph80cq5en1eb1ocgv6hb2vv6.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCxIG6jBtL3ioPQ_oYkd1QUW-xGuS3CjAc"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "427380420118-i30vupm7ph80cq5en1eb1ocgv6hb2vv6.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
