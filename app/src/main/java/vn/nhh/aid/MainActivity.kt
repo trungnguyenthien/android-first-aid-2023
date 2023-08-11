@@ -15,11 +15,11 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
         val sharedPref = getSharedPreferences("UserInfo", MODE_PRIVATE)
-        var check: Boolean = sharedPref.getBoolean("my_first_time", true)
-        if (check){
-            pushPageStack(HomeFragment())
+        if (sharedPref.getBoolean("my_first_time", false)){ //Hien khong can
+            sharedPref.edit().putBoolean("my_first_time", false).apply()
+            pushPageStack(InfoFragment())
         }
-        else pushPageStack(InfoFragment())
+        pushPageStack(HomeFragment())
     }
 
     override fun onBackPressed() {
