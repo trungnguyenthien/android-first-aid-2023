@@ -16,14 +16,19 @@ class StepImageComponent(context: Context) : LinearLayoutCompat(context) {
     fun setData(
         url: String,
         caption: String = "",
+        size: String? =" ",
     ) {
-        //val imageView: AppCompatImageView = findViewById(R.id.media)
+        val imageView: AppCompatImageView = findViewById(R.id.media)
         val captionText: AppCompatTextView = findViewById(R.id.text_caption)
+        val l= size!!.split(":")
 
         captionText.text = caption
 
-        //Picasso.get()
-            //.load(url)
-            //.into(imageView)
+        Picasso.get()
+            .load(url).centerCrop()
+            .placeholder(R.drawable.first_aid)
+            .resize(l[0].toInt(), l[1].toInt())
+            .into(imageView)
+
     }
 }

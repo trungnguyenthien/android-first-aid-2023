@@ -6,6 +6,7 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.TextView
 import androidx.viewpager.widget.ViewPager
+import com.google.android.material.tabs.TabLayout
 import org.json.JSONArray
 import org.json.JSONObject
 import vn.nhh.aid.R
@@ -50,6 +51,8 @@ class GuideFragment : BaseFragment() {
         Lstep = guideObject?.Steps
         viewPagerAdapter = ViewPagerAdapter(requireContext(), Lstep)
         viewPager.adapter = viewPagerAdapter
+        val tablayout: TabLayout = view.findViewById(R.id.tab_layout)
+        tablayout.setupWithViewPager(viewPager, true)
 
     }
 

@@ -19,11 +19,12 @@ class ViewPagerAdapter(context: Context, val Guidelist: List<GuideFragment.Step>
     }
     override fun instantiateItem(container: ViewGroup, position: Int): Any {
     val caption = Guidelist?.get(position)?.Instruction
-    val url = Guidelist?.get(position)?.url
+    val url = "https://i.imgur.com/MOuNLan.png"//Guidelist?.get(position)?.url
+    val size = Guidelist?.get(position)?.size
 
     val imageTextView = StepImageComponent(shareMainActivity()).apply {
         if (caption != null && url != null)
-            setData(url,caption)
+            setData(url,caption, size)
         }
     container.addView(imageTextView)
     return imageTextView
