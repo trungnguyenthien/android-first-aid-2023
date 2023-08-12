@@ -37,7 +37,8 @@
             android:layout_height="wrap_content"
             android:src="@drawable/center_button"
             android:background="@android:color/transparent"
-            android:backgroundTint="@android:color/transparent" />
+            android:backgroundTint="@android:color/transparent"
+            android:contentDescription = "ÊM"/>
 
 
     </FrameLayout>

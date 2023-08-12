@@ -8,8 +8,8 @@ import vn.nhh.aid.R
 // import vn.nhh.aid.screens.lesson.LessonRecyclerViewAdapter.MyViewHolder
 
 class LessonRecyclerViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
-    private val name: TextView = itemView.findViewById(R.id.lessonNameText)
-    private val desc: TextView = itemView.findViewById(R.id.lessonDescText)
+    private val name: TextView = itemView.findViewById(R.id.Name)
+    private val desc: TextView = itemView.findViewById(R.id.Desc)
 
     fun getName(): TextView {
         return name

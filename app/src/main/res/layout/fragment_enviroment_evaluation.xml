@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="@color/mongolia"
+    android:theme="@style/ThemeOverlay.FirstAid.FullscreenContainer"
+    tools:context=".screens.EnvironmentEvaluateFragment">
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="30dp"
+        android:layout_marginEnd="30dp"
+        android:text="IMPORTANT THINGS TO REMEMBER"
+        android:textSize="20sp"
+        android:textColor="@color/black"
+        android:textStyle="bold"
+        android:textAlignment="center"
+        android:layout_marginTop="30dp"/>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="515dp">
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:autoSizeMaxTextSize="100sp"
+            android:autoSizeMinTextSize="23sp"
+            android:autoSizeStepGranularity="10sp"
+            android:autoSizeTextType="uniform"
+            android:ellipsize="end"
+            android:gravity="center"
+            android:inputType="textMultiLine"
+            android:maxLines="5"
+            android:textColor="@color/black"
+            android:paddingStart="15dp"
+            android:paddingTop="10dp"
+            android:singleLine="false"
+            android:text="- Đánh giá hiện trường \n- Vỗ vào vai và gọi to \n- Gọi hỗ trợ và gọi 115 \n- Ấn trán, nâng cằm \n- Ghé tai vào miệng, cảm nhận hơi thở \n- KIểm tra mạch"
+            android:textAlignment="viewStart"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:layout_editor_absoluteX="-16dp" />
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/skip_button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_marginTop="255dp"
+        android:paddingStart="30dp"
+        android:paddingEnd="30dp"
+        android:text="Next"
+        android:textAllCaps="false" />
+
+</FrameLayout>

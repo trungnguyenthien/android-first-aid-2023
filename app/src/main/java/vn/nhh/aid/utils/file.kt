@@ -30,6 +30,28 @@ fun readJsonFromAssets(context: Context, fileName: String): JSONObject? {
         null
     }
 }
+fun readJsonArrayFromAssets(context: Context, fileName: String): JSONArray? {
+    val json: String?
+    try {
+        val inputStream = context.assets.open(fileName)
+        val size = inputStream.available()
+        val buffer = ByteArray(size)
+        inputStream.read(buffer)
+        inputStream.close()
+
+        json = String(buffer, Charset.defaultCharset())
+    } catch (e: IOException) {
+        e.printStackTrace()
+        return null
+    }
+
+    return try {
+        JSONArray(json)
+    } catch (e: Exception) {
+        e.printStackTrace()
+        null
+    }
+}
 
 
 

@@ -1,0 +1,412 @@
+[
+    {
+        "guideId": "001",
+        "ProName": "Đột quỵ",
+        "Steps": [
+            {
+                "Instruction": "Placeholder",
+                "type": "Image|videos",
+                "url": null,
+                "size": "480:360"
+            },
+            {
+                "Instruction": "Placeholder",
+                "type": "Image|videos",
+                "url": null,
+                "size": "480:360"
+            },
+            {
+                "Instruction": "Placeholder",
+                "type": "Image|videos",
+                "url": null,
+                "size": "480:360"
+            }
+        ]
+    },
+    {
+        "guideId": "002",
+        "ProName": "Hạ đường huyết",
+        "Steps": [
+            {
+                "Instruction": "Placeholder",
+                "type": "Image|videos",
+                "url": null,
+                "size": "480:360"
+            },
+            {
+                "Instruction": "Placeholder",
+                "type": "Image|videos",
+                "url": null,
+                "size": "480:360"
+            },
+            {
+                "Instruction": "Placeholder",
+                "type": "Image|videos",
+                "url": null,
+                "size": "480:360"
+            }
+        ]
+    },
+    {
+        "guideId": "003",
+        "ProName": "Mất nước ở trẻ",
+        "Steps": [
+            {
+                "Instruction": "Placeholder",
+                "type": "Image|videos",
+                "url": null,
+                "size": "480:360"
+            },
+            {
+                "Instruction": "Placeholder",
+                "type": "Image|videos",
+                "url": null,
+                "size": "480:360"
+            },
+            {
+                "Instruction": "Placeholder",
+                "type": "Image|videos",
+                "url": null,
+                "size": "480:360"
+            }
+        ]
+    },
+    {
+        "guideId": "004",
+        "ProName": "Ngừng tuần hoàn ở người trưởng thành",
+        "Steps": [
+            {
+                "Instruction": "Placeholder",
+                "type": "Image|videos",
+                "url": null,
+                "size": "480:360"
+            },
+            {
+                "Instruction": "Placeholder",
+                "type": "Image|videos",
+                "url": null,
+                "size": "480:360"
+            },
+            {
+                "Instruction": "Placeholder",
+                "type": "Image|videos",
+                "url": null,
+                "size": "480:360"
+            }
+        ]
+    },
+    {
+        "guideId": "005",
+        "ProName": "Ngừng tuần hoàn ở trẻ từ 1 tuổi đến tuổi dậy thì",
+        "Steps": [
+            {
+                "Instruction": "Placeholder",
+                "type": "Image|videos",
+                "url": null,
+                "size": "480:360"
+            },
+            {
+                "Instruction": "Placeholder",
+                "type": "Image|videos",
+                "url": null,
+                "size": "480:360"
+            },
+            {
+                "Instruction": "Placeholder",
+                "type": "Image|videos",
+                "url": null,
+                "size": "480:360"
+            }
+        ]
+    },
+    {
+        "guideId": "006",
+        "ProName": "Ngừng tuần hoàn ở trẻ dưới 1 tuổi",
+        "Steps": [
+            {
+                "Instruction": "Placeholder",
+                "type": "Image|videos",
+                "url": null,
+                "size": "480:360"
+            },
+            {
+                "Instruction": "Placeholder",
+                "type": "Image|videos",
+                "url": null,
+                "size": "480:360"
+            },
+            {
+                "Instruction": "Placeholder",
+                "type": "Image|videos",
+                "url": null,
+                "size": "480:360"
+            }
+        ]
+    },
+    {
+        "guideId": "007",
+        "ProName": "Hóc dị vật đường thở ở người trưởng thành",
+        "Steps": [
+            {
+                "Instruction": "Placeholder",
+                "type": "Image|videos",
+                "url": null,
+                "size": "480:360"
+            },
+            {
+                "Instruction": "Placeholder",
+                "type": "Image|videos",
+                "url": null,
+                "size": "480:360"
+            },
+            {
+                "Instruction": "Placeholder",
+                "type": "Image|videos",
+                "url": null,
+                "size": "480:360"
+            }
+        ]
+    },
+    {
+        "guideId": "008",
+        "ProName": "Hóc dị vật đường thở khi chỉ có một mình",
+        "Steps": [
+            {
+                "Instruction": "Placeholder",
+                "type": "Image|videos",
+                "url": null,
+                "size": "480:360"
+            },
+            {
+                "Instruction": "Placeholder",
+                "type": "Image|videos",
+                "url": null,
+                "size": "480:360"
+            },
+            {
+                "Instruction": "Placeholder",
+                "type": "Image|videos",
+                "url": null,
+                "size": "480:360"
+            }
+        ]
+    },
+    {
+        "guideId": "009",
+        "ProName": "Hóc dị vật đường thở ở trẻ dưới 1 tuổi",
+        "Steps": [
+            {
+                "Instruction": "Placeholder",
+                "type": "Image|videos",
+                "url": null,
+                "size": "480:360"
+            },
+            {
+                "Instruction": "Placeholder",
+                "type": "Image|videos",
+                "url": null,
+                "size": "480:360"
+            },
+            {
+                "Instruction": "Placeholder",
+                "type": "Image|videos",
+                "url": null,
+                "size": "480:360"
+            }
+        ]
+    },
+    {
+        "guideId": "010",
+        "ProName": "Bỏng",
+        "Steps":  [
+            {
+                "Instruction": "Placeholder",
+                "type": "Image|videos",
+                "url": null,
+                "size": "480:360"
+            },
+            {
+                "Instruction": "Placeholder",
+                "type": "Image|videos",
+                "url": null,
+                "size": "480:360"
+            },
+            {
+                "Instruction": "Placeholder",
+                "type": "Image|videos",
+                "url": null,
+                "size": "480:360"
+            }
+        ]
+    },
+    {
+        "guideId": "011",
+        "ProName": "Gãy xương cánh tay",
+        "Steps":  [
+            {
+                "Instruction": "Placeholder",
+                "type": "Image|videos",
+                "url": null,
+                "size": "480:360"
+            },
+            {
+                "Instruction": "Placeholder",
+                "type": "Image|videos",
+                "url": null,
+                "size": "480:360"
+            },
+            {
+                "Instruction": "Placeholder",
+                "type": "Image|videos",
+                "url": null,
+                "size": "480:360"
+            }
+        ]
+    },
+    {
+        "guideId": "012",
+        "ProName": "Gãy xương cẳng tay",
+        "Steps": [
+            {
+                "Instruction": "Placeholder",
+                "type": "Image|videos",
+                "url": null,
+                "size": "480:360"
+            },
+            {
+                "Instruction": "Placeholder",
+                "type": "Image|videos",
+                "url": null,
+                "size": "480:360"
+            },
+            {
+                "Instruction": "Placeholder",
+                "type": "Image|videos",
+                "url": null,
+                "size": "480:360"
+            }
+        ]
+    },
+    {
+        "guideId": "013",
+        "ProName": "Gãy xương đùi",
+        "Steps": [
+            {
+                "Instruction": "Placeholder",
+                "type": "Image|videos",
+                "url": null,
+                "size": "480:360"
+            },
+            {
+                "Instruction": "Placeholder",
+                "type": "Image|videos",
+                "url": null,
+                "size": "480:360"
+            },
+            {
+                "Instruction": "Placeholder",
+                "type": "Image|videos",
+                "url": null,
+                "size": "480:360"
+            }
+        ]
+    },
+    {
+        "guideId": "014",
+        "ProName": "Gãy xương cẳng chân",
+        "Steps": [
+            {
+                "Instruction": "Placeholder",
+                "type": "Image|videos",
+                "url": null,
+                "size": "480:360"
+            },
+            {
+                "Instruction": "Placeholder",
+                "type": "Image|videos",
+                "url": null,
+                "size": "480:360"
+            },
+            {
+                "Instruction": "Placeholder",
+                "type": "Image|videos",
+                "url": null,
+                "size": "480:360"
+            }
+        ]
+    },
+    {
+        "guideId": "015",
+        "ProName": "Chảy máu ở cổ",
+        "Steps": [
+            {
+                "Instruction": "Placeholder",
+                "type": "Image|videos",
+                "url": null,
+                "size": "480:360"
+            },
+            {
+                "Instruction": "Placeholder",
+                "type": "Image|videos",
+                "url": null,
+                "size": "480:360"
+            },
+            {
+                "Instruction": "Placeholder",
+                "type": "Image|videos",
+                "url": null,
+                "size": "480:360"
+            }
+        ]
+    },
+    {
+        "guideId": "016",
+        "ProName": "Chảy máu chi thẳng",
+        "Steps": [
+            {
+                "Instruction": "Placeholder",
+                "type": "Image|videos",
+                "url": null,
+                "size": "480:360"
+            },
+            {
+                "Instruction": "Placeholder",
+                "type": "Image|videos",
+                "url": null,
+                "size": "480:360"
+            },
+            {
+                "Instruction": "Placeholder",
+                "type": "Image|videos",
+                "url": null,
+                "size": "480:360"
+            }
+        ]
+    },
+    {
+        "guideId": "017",
+        "ProName": "Chảy máu khớp",
+        "Steps": [
+            {
+                "Instruction": "Placeholder",
+                "type": "Image|videos",
+                "url": null,
+                "size": "480:360"
+            },
+            {
+                "Instruction": "Placeholder",
+                "type": "Image|videos",
+                "url": null,
+                "size": "480:360"
+            },
+            {
+                "Instruction": "Placeholder",
+                "type": "Image|videos",
+                "url": null,
+                "size": "480:360"
+            }
+        ]
+    }
+]
+
+

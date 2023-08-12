@@ -1,6 +1,7 @@
 package vn.nhh.aid
 
 import android.annotation.SuppressLint
+import android.content.SharedPreferences
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import androidx.fragment.app.Fragment
@@ -13,6 +14,11 @@ class MainActivity : AppCompatActivity() {
         shareInstance = this
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
+        val sharedPref = getSharedPreferences("UserInfo", MODE_PRIVATE)
+        if (sharedPref.getBoolean("my_first_time", false)){ //Hien khong can
+            sharedPref.edit().putBoolean("my_first_time", false).apply()
+            pushPageStack(InfoFragment())
+        }
         pushPageStack(HomeFragment())
     }
 

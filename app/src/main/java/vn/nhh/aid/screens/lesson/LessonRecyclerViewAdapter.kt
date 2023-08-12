@@ -10,7 +10,7 @@ import vn.nhh.aid.R
 
 class LessonRecyclerViewAdapter() : RecyclerView.Adapter<LessonRecyclerViewHolder>() {
     override fun getItemViewType(position: Int): Int {
-        return R.layout.lesson_recycler_view
+        return R.layout.general_recycler_view
     }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): LessonRecyclerViewHolder {

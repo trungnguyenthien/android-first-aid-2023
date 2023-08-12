@@ -70,7 +70,7 @@ class HomeFragment : BaseFragment() {
         val centerButton: ImageButton = view.findViewById(R.id.center_button)
 
         centerButton.setOnClickListener {
-            pushPageStack(EvaluateProblemFragment.newInstance(""))
+            pushPageStack(EnvironmentEvaluateFragment.newInstance())
         }
     }
 
