@@ -1,15 +1,18 @@
 package vn.nhh.aid
 
 import android.annotation.SuppressLint
-import android.app.ActionBar
+import android.content.res.ColorStateList
 import android.graphics.Color
 import android.graphics.drawable.ColorDrawable
 import android.os.Bundle
-import android.widget.TextView
+import android.view.MenuItem
+import android.widget.AdapterView.OnItemSelectedListener
 import androidx.appcompat.app.AppCompatActivity
 import androidx.appcompat.widget.AppCompatTextView
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.FragmentManager
+import com.google.android.material.bottomnavigation.BottomNavigationView
+import com.google.android.material.navigation.NavigationBarView
 import vn.nhh.aid.screens.*
 
 private var shareInstance: MainActivity? = null
@@ -22,12 +25,36 @@ class MainActivity : AppCompatActivity() {
         setContentView(R.layout.activity_main)
         val barColor = Color.WHITE
         window.statusBarColor = barColor
-        supportActionBar?.setDisplayOptions(ActionBar.DISPLAY_SHOW_CUSTOM)
+        supportActionBar?.setDisplayOptions(androidx.appcompat.app.ActionBar.DISPLAY_SHOW_CUSTOM)
         supportActionBar?.setCustomView(R.layout.abs_layout)
         supportActionBar?.setBackgroundDrawable(ColorDrawable(barColor))
         supportActionBar?.customView?.findViewById<AppCompatTextView>(R.id.tvTitle)?.let {
             it.text = this.title
         }
+
+        val bottomNavView = findViewById<BottomNavigationView>(R.id.bottom_nav_view)
+        bottomNavView.itemIconTintList = ColorStateList(
+            arrayOf(
+                intArrayOf(android.R.attr.state_selected), // When the tab is selected.
+                intArrayOf() // When the tab is not selected.
+            ),
+            intArrayOf(
+                Color.BLACK,
+                Color.GRAY
+            )
+        )
+        bottomNavView.itemTextColor = bottomNavView.itemIconTintList
+
+        bottomNavView.setOnItemReselectedListener {
+            when (it.itemId) {
+                R.id.home_button -> {}
+                R.id.location_butotn -> {}
+                R.id.course_button -> {}
+                R.id.account_button -> {}
+                else -> {}
+            }
+        }
+
         val sharedPref = getSharedPreferences("UserInfo", MODE_PRIVATE)
         if (sharedPref.getBoolean("my_first_time", false)) { //Hien khong can
             sharedPref.edit().putBoolean("my_first_time", false).apply()
