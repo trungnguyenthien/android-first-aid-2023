@@ -9,7 +9,8 @@ dependencyResolutionManagement {
     repositoriesMode.set(RepositoriesMode.FAIL_ON_PROJECT_REPOS)
     repositories {
         google()
-        mavenCentral()
+//        mavenCentral()
+        mavenCentral { url 'https://jcenter.bintray.com/' }
     }
 }
 rootProject.name = "FirstAid"
