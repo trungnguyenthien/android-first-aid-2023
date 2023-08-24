@@ -24,4 +24,5 @@
     <color name="glaucous">#FF69719F</color>
     <color name="glaucous_overlay">#6669719F</color>
     <color name="white_overlay">#66FFFFFF</color>
+    <color name="CLEAR">#00000000</color>
 </resources>

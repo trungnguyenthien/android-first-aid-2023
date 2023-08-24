@@ -53,7 +53,10 @@ fun readJsonArrayFromAssets(context: Context, fileName: String): JSONArray? {
     }
 }
 
-
+fun JSONObject.getListString(name: String): List<String> {
+    val arrayObj = optJSONArray(name) ?: return emptyList()
+    return List<String>(arrayObj.length()) { arrayObj.getString(it) }
+}
 
 fun JSONObject.toList(key: String): List<JSONObject> {
     val list = mutableListOf<JSONObject>()

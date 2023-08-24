@@ -1,61 +1,87 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.appcompat.widget.LinearLayoutCompat
+<androidx.constraintlayout.widget.ConstraintLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical"
     android:background="@color/mongolia"
     android:theme="@style/ThemeOverlay.FirstAid.FullscreenContainer"
     tools:context=".screens.EnvironmentEvaluateFragment">
 
     <androidx.appcompat.widget.LinearLayoutCompat
+        android:orientation="vertical"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:paddingHorizontal="30dp"
-        android:background="@color/lavender"
-        android:orientation="horizontal">
-        <androidx.appcompat.widget.AppCompatButton
-            android:layout_width="0dp"
-            android:layout_weight="1"
-            android:gravity="center_vertical"
-            android:layout_gravity="center_vertical"
-            android:text="Sơ cứu cơ bản"
-            android:layout_height="40dp"/>
-        <androidx.appcompat.widget.AppCompatImageView
-            android:src="@drawable/down_arrow"
-            android:layout_weight="0"
-            android:layout_gravity="center"
-            android:layout_width="30dp"
-            android:layout_height="30dp"/>
-    </androidx.appcompat.widget.LinearLayoutCompat>
-    <net.cachapa.expandablelayout.ExpandableLayout
-        android:id="@+id/expandable_layout"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        app:el_duration="1000"
-        app:el_expanded="true"
-        app:el_parallax="0.5">
-
-        <TextView
+        android:layout_height="match_parent">
+        <androidx.appcompat.widget.LinearLayoutCompat
+            android:id="@+id/ex_button_layout"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:padding="16dp"
-            android:text="Fixed height" />
+            android:paddingHorizontal="30dp"
+            android:background="@color/lavender"
+            android:clickable="true"
+            android:orientation="horizontal">
+            <androidx.appcompat.widget.AppCompatButton
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:background="@color/CLEAR"
+                android:gravity="center_vertical"
+                android:layout_gravity="center_vertical"
+                android:textColor="@color/gray_600"
+                android:clickable="false"
+                android:text="Sơ cứu cơ bản"
+                android:layout_height="40dp"/>
+            <androidx.appcompat.widget.AppCompatImageView
+                android:src="@drawable/down_arrow"
+                android:layout_weight="0"
+                android:layout_gravity="center"
+                android:clickable="false"
+                android:layout_width="30dp"
+                android:layout_height="30dp"/>
+        </androidx.appcompat.widget.LinearLayoutCompat>
+        <net.cachapa.expandablelayout.ExpandableLayout
+            android:id="@+id/expandable_layout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingStart="50dp"
+            app:el_duration="1000"
+            app:el_expanded="true"
+            app:el_parallax="0.5">
 
-    </net.cachapa.expandablelayout.ExpandableLayout>
+            <androidx.appcompat.widget.LinearLayoutCompat
+                android:orientation="vertical"
+                android:id="@+id/expandable_layout_content"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"/>
 
+        </net.cachapa.expandablelayout.ExpandableLayout>
+    </androidx.appcompat.widget.LinearLayoutCompat>
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/call_115"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintBottom_toBottomOf="parent"
+        android:layout_gravity="center"
+        android:layout_marginHorizontal="50dp"
+        android:textColor="@color/white"
+        android:background="@drawable/blue_rounded_button"
+        android:layout_marginBottom="150dp"
+        android:text="Gọi 115"
+        android:textAllCaps="false" />
 
     <androidx.appcompat.widget.AppCompatButton
         android:id="@+id/skip_button"
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        app:layout_constraintBottom_toBottomOf="parent"
         android:layout_gravity="center"
-        android:layout_marginTop="255dp"
-        android:paddingStart="30dp"
-        android:paddingEnd="30dp"
-        android:text="Next"
+        android:background="@color/CLEAR"
+        android:layout_marginBottom="100dp"
+        android:text="Tiếp theo"
         android:textAllCaps="false" />
 
-</androidx.appcompat.widget.LinearLayoutCompat>
+</androidx.constraintlayout.widget.ConstraintLayout>
