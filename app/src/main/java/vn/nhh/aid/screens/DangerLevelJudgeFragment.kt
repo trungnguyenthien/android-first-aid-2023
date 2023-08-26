@@ -4,12 +4,12 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.Button
+import androidx.appcompat.widget.AppCompatButton
 import vn.nhh.aid.R
 import vn.nhh.aid.pushPageStack
 
 
-class DangerleveljudgeFragment: BaseFragment() {
+class DangerLevelJudgeFragment: BaseFragment() {
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -21,24 +21,17 @@ class DangerleveljudgeFragment: BaseFragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        val UnknownButton: Button = view.findViewById(R.id.unknownd_button)
-        val HighDanger: Button = view.findViewById(R.id.highd_button)
-        val LowDanger: Button = view.findViewById(R.id.lowd_button)
-
-        UnknownButton.setOnClickListener {
-            pushPageStack(EvaluateProblemFragment.newInstance(""))
+        view.findViewById<AppCompatButton>(R.id.highd_button).setOnClickListener {
+            pushPageStack(DangerLevelFragment.newInstance(0, -1))
         }
-        HighDanger.setOnClickListener {
-            pushPageStack(DangerlevelFragment.newInstance(0, -1))
-        }
-        LowDanger.setOnClickListener {
-            pushPageStack(DangerlevelFragment.newInstance(1, -1))
+        view.findViewById<AppCompatButton>(R.id.lowd_button).setOnClickListener {
+            pushPageStack(DangerLevelFragment.newInstance(1, -1))
         }
     }
 
     companion object {
         @JvmStatic
-        fun newInstance() =  DangerleveljudgeFragment().apply {
+        fun newInstance() =  DangerLevelJudgeFragment().apply {
             arguments = Bundle().apply {
             }
         }

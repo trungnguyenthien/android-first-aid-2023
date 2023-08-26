@@ -19,7 +19,7 @@ import vn.nhh.aid.views.RecyclerViewAdapter
 private const val D = "0"
 private const val N = "-1"
 
-class DangerlevelFragment: BaseFragment(), RecyclerViewAdapter.OnItemClickListener {
+class DangerLevelFragment: BaseFragment(), RecyclerViewAdapter.OnItemClickListener {
     private var level: Int = 0
     private var position: Int = 0
     private lateinit var recyclerview: RecyclerView
@@ -34,8 +34,6 @@ class DangerlevelFragment: BaseFragment(), RecyclerViewAdapter.OnItemClickListen
             prolist = getListRoot()
         }
     }
-
-
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -55,7 +53,7 @@ class DangerlevelFragment: BaseFragment(), RecyclerViewAdapter.OnItemClickListen
             title.text = prolist?.get(position)?.question
             prolist = prolist?.get(position)?.options
         } else if (level == 0){
-            title.text = "Các bênh nguy hiểm đến tính mạng"
+            title.text = "Các bệnh nguy hiểm đến tính mạng"
         } else { title.text = "Các bệnh có thể trì hoãn"}
         adapter = RecyclerViewAdapter(prolist, this)
         recyclerview.adapter = adapter
@@ -96,7 +94,7 @@ class DangerlevelFragment: BaseFragment(), RecyclerViewAdapter.OnItemClickListen
 
     companion object {
         @JvmStatic
-        fun newInstance(position: Int, Clicked: Int) = DangerlevelFragment().apply {
+        fun newInstance(position: Int, Clicked: Int) = DangerLevelFragment().apply {
             arguments = Bundle().apply {
                 putInt(D, position)
                 putInt(N, Clicked)

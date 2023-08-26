@@ -1,12 +1,10 @@
 package vn.nhh.aid.screens
 
-import android.content.res.ColorStateList
 import android.graphics.Color
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.Button
 import androidx.appcompat.widget.AppCompatButton
 import androidx.appcompat.widget.LinearLayoutCompat
 import net.cachapa.expandablelayout.ExpandableLayout
@@ -30,10 +28,7 @@ class EnvironmentEvaluateFragment: BaseFragment() {
     }
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        view.findViewById<Button>(R.id.skip_button).setOnClickListener {
-
-        }
-
+        
         val exLayoutContent = view.findViewById<LinearLayoutCompat>(R.id.expandable_layout_content)
         val data = readData()
         data.list.forEachIndexed { index, text ->
@@ -50,7 +45,7 @@ class EnvironmentEvaluateFragment: BaseFragment() {
         val exLayoutContent2 = view.findViewById<LinearLayoutCompat>(R.id.expandable_layout_content_2)
         exLayoutContent2.addView(makeButton("Biết rõ loại chấn thương").apply {
             setOnClickListener {
-                pushPageStack(DangerleveljudgeFragment.newInstance())
+                pushPageStack(DangerLevelJudgeFragment.newInstance())
             }
         })
 

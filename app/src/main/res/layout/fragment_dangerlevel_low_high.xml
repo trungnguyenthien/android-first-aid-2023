@@ -7,7 +7,7 @@
     android:background="@color/mongolia"
     android:orientation="vertical"
     android:theme="@style/ThemeOverlay.FirstAid.FullscreenContainer"
-    tools:context=".screens.DangerlevelFragment">
+    tools:context=".screens.DangerLevelFragment">
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"

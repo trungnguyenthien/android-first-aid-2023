@@ -1,11 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.appcompat.widget.LinearLayoutCompat xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
     android:background="@color/mongolia"
+    android:paddingHorizontal="10dp"
     android:theme="@style/ThemeOverlay.FirstAid.FullscreenContainer"
     tools:context=".screens.HomeFragment">
 
@@ -15,18 +16,20 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="30dp"
         android:layout_marginEnd="30dp"
-        android:text="Đánh gía mức độ nguy hiểm"
-        android:textSize="20sp"
+        android:text="Đánh giá mức độ nguy hiểm"
+        android:textSize="30sp"
         android:textColor="@color/black"
         android:textStyle="bold"
         android:textAlignment="center"
-        android:layout_marginTop="30dp" />
+        android:layout_marginTop="10dp" />
 
 
     <androidx.appcompat.widget.AppCompatButton
         android:id="@+id/highd_button"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="match_parent"
+        android:layout_height="80dp"
+        android:background="@drawable/blue_rounded_button"
+        android:textColor="@color/ghost_white"
         android:layout_gravity="center"
         android:layout_marginTop="20dp"
         android:paddingStart="30dp"
@@ -35,23 +38,15 @@
         android:textAllCaps="false" />
     <androidx.appcompat.widget.AppCompatButton
         android:id="@+id/lowd_button"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="match_parent"
+        android:layout_height="80dp"
+        android:background="@drawable/blue_rounded_button"
+        android:textColor="@color/ghost_white"
         android:layout_gravity="center"
-        android:layout_marginTop="20dp"
+        android:layout_marginTop="5dp"
         android:paddingStart="30dp"
         android:paddingEnd="30dp"
         android:text="Nguy hiểm thấp"
         android:textAllCaps="false" />
-    <androidx.appcompat.widget.AppCompatButton
-        android:id="@+id/unknownd_button"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_gravity="center"
-        android:layout_marginTop="20dp"
-        android:paddingStart="30dp"
-        android:paddingEnd="30dp"
-        android:text="Không rõ"
-        android:textAllCaps="false" />
 
-</LinearLayout>
+</androidx.appcompat.widget.LinearLayoutCompat>

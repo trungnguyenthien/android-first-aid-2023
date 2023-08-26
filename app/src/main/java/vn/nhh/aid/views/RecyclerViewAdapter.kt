@@ -6,10 +6,10 @@ import android.view.ViewGroup
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import vn.nhh.aid.R
-import vn.nhh.aid.screens.DangerlevelFragment
+import vn.nhh.aid.screens.DangerLevelFragment
 
 class RecyclerViewAdapter(
-    private val ProList: List<DangerlevelFragment.Procedure>?,
+    private val ProList: List<DangerLevelFragment.Procedure>?,
     private val listener: OnItemClickListener
 ) :
     RecyclerView.Adapter<RecyclerViewAdapter.ItemViewHolder>() {
