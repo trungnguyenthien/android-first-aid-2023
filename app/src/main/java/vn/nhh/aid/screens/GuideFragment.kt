@@ -47,7 +47,7 @@ class GuideFragment : BaseFragment() {
         val TxtView:TextView = view.findViewById(R.id.title_tv)
         TxtView.text = text
         viewPager = view.findViewById(R.id.idViewPager)
-        Lstep = guideObject?.Steps
+        Lstep = guideObject?.Steps ?: return
         viewPagerAdapter = ViewPagerAdapter(requireContext(), Lstep)
         viewPager.adapter = viewPagerAdapter
 

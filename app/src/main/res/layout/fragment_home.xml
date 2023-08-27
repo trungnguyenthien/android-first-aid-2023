@@ -3,6 +3,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:background="@color/mongolia"
     android:orientation="vertical"
     android:theme="@style/AppTheme"
@@ -61,13 +62,15 @@
         android:gravity="center_horizontal"
         android:orientation="horizontal"
         android:paddingHorizontal="10dp"
-        android:paddingVertical="10dp">
+        android:paddingVertical="5dp">
 
         <androidx.appcompat.widget.AppCompatImageView
             android:layout_width="65dp"
             android:layout_height="65dp"
             android:layout_gravity="center_vertical"
             android:gravity="center_vertical"
+            android:tintMode="src_in"
+            app:tint="@color/glaucous"
             android:src="@drawable/telephone_symbol_button" />
 
         <androidx.appcompat.widget.LinearLayoutCompat

@@ -51,7 +51,7 @@ class EnvironmentEvaluateFragment: BaseFragment() {
 
         exLayoutContent2.addView(makeButton("Cần thêm dấu hiệu phán đoán").apply {
             setOnClickListener {
-
+                pushPageStack(JudgeFragment.newInstance())
             }
         })
 

@@ -1,0 +1,18 @@
+{
+  "title": "Dấu hiệu điển hình",
+  "dau_hieu": [
+    {
+      "text": "Miệng méo",
+      "guide_id": ""
+    },
+    {
+      "text": "Chảy nước miếng",
+      "guide_id": ""
+    },
+    {
+      "text": "Nói khó khăn",
+      "guide_id": ""
+    }
+  ],
+  "other_text_button": "Khác"
+}

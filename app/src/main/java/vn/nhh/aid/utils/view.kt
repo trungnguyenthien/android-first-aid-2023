@@ -7,10 +7,12 @@ import android.graphics.Typeface
 import android.view.View
 import android.view.ViewGroup.MarginLayoutParams
 import android.widget.ImageView
+import android.widget.TextView
 import android.widget.ToggleButton
 import androidx.annotation.ColorInt
 import androidx.appcompat.widget.LinearLayoutCompat
 import androidx.core.view.setPadding
+import androidx.core.widget.TextViewCompat
 import com.google.android.material.imageview.ShapeableImageView
 import com.google.android.material.shape.CornerFamily
 import com.google.android.material.shape.MaterialShapeDrawable
@@ -76,6 +78,11 @@ fun makeButtonTextColorStateList(@ColorInt normal: Int, @ColorInt pressed: Int) 
     intArrayOf(pressed, normal)
 )
 
+fun makeTextColorStateList(@ColorInt normal: Int, @ColorInt pressed: Int) = ColorStateList(
+    arrayOf(intArrayOf(android.R.attr.state_pressed), intArrayOf()),
+    intArrayOf(pressed, normal)
+)
+
 enum class LinearLayoutGravity(val value: Int) {
     GRAVITY_TOP(0x30),
     GRAVITY_BOTTOM(0x50),
@@ -97,4 +104,10 @@ fun makeLinearLayoutParam(
 
 fun loadImageByUrl(url: String, imageView: ImageView) {
     Picasso.get().load(url).into(imageView)
+}
+
+fun makeTitleTextView(title: String) = TextView(shareMainActivity()).apply {
+    text = title
+    textSize = 30F
+    setTextColor(makeTextColorStateList(normal = Color.BLACK, pressed = Color.GRAY))
 }

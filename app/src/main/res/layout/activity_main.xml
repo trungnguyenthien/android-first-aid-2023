@@ -11,8 +11,13 @@
     <!-- Trong layout XML của Activity -->
     <FrameLayout
         android:id="@+id/fragment_container"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:background="@color/mongolia"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toTopOf="@id/bottom_nav_view"
         />
 
     <com.google.android.material.bottomnavigation.BottomNavigationView
