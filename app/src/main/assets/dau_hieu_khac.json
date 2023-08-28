@@ -1,50 +1,50 @@
 {
-  "question": "Có vết thương ở vị trí cụ thể không?",
+  "title": "Có vết thương ở vị trí cụ thể không?",
   "options": [
     {
-      "option": "Có",
-      "question":"Nạn nhân có dấu hiệu nào?",
+      "text": "Có",
+      "title":"Nạn nhân có dấu hiệu nào?",
       "options":[
         {
-          "option": "Da đỏ, xuất hiện nốt phồng",
+          "text": "Da đỏ, xuất hiện nốt phồng",
           "guideline": "010"
         },
         {
-          "option": "Có vết bầm, xương bị lệch",
-          "question": "Vị trí bị thương?",
+          "text": "Có vết bầm, xương bị lệch",
+          "title": "Vị trí bị thương?",
           "options":[
             {
-              "option": "Cánh tay",
+              "text": "Cánh tay",
               "guideline": "011"
             },
             {
-              "option": "Cẳng tay",
+              "text": "Cẳng tay",
               "guideline": "012"
             },
             {
-              "option": "Đùi",
+              "text": "Đùi",
               "guideline": "013"
             },
             {
-              "option": "Cẳng chân",
+              "text": "Cẳng chân",
               "guideline": "014"
             }
           ]
         },
         {
-          "option": "Chảy máu",
-          "question": "Vị trí bị thương?",
+          "text": "Chảy máu",
+          "title": "Vị trí bị thương?",
           "options": [
             {
-              "option": "Cổ",
+              "text": "Cổ",
               "guideline": "015"
             },
             {
-              "option": "Chi thẳng",
+              "text": "Chi thẳng",
               "guideline": "016"
             },
             {
-              "option": "Khớp",
+              "text": "Khớp",
               "guideline": "017"
             }
           ]
@@ -52,57 +52,57 @@
       ]
     },
     {
-      "option": "Không",
-      "question": "Nạn nhân có dấu hiệu nào?",
+      "text": "Không",
+      "title": "Nạn nhân có dấu hiệu nào?",
       "options": [
         {
-          "option": "Một bên mặt hoặc tay bị liệt",
+          "text": "Một bên mặt hoặc tay bị liệt",
           "guideline": "001"
         },
         {
-          "option": "Tim đập nhanh, mệt mỏi, chóng mặt",
+          "text": "Tim đập nhanh, mệt mỏi, chóng mặt",
           "guideline": "002"
         },
         {
-          "option": "Miệng lưỡi bị khô",
+          "text": "Miệng lưỡi bị khô",
           "guideline": "003"
         },
         {
-          "option": "Khó thở/Không thở",
-          "question": "Dấu hiệu?",
+          "text": "Khó thở/Không thở",
+          "title": "Dấu hiệu?",
           "options": [
             {
-              "option": "Bất tỉnh, không có mạch",
-              "question": "Đối tượng?",
+              "text": "Bất tỉnh, không có mạch",
+              "title": "Đối tượng?",
               "options": [
                 {
-                  "option": "Người trưởng thành",
+                  "text": "Người trưởng thành",
                   "guideline": "004"
                 },
                 {
-                  "option": "Trẻ từ 1 tuổi đến tuổi dậy thì",
+                  "text": "Trẻ từ 1 tuổi đến tuổi dậy thì",
                   "guideline": "005"
                 },
                 {
-                  "option": "Trẻ dưới 1 tuổi",
+                  "text": "Trẻ dưới 1 tuổi",
                   "guideline": "006"
                 }
               ]
             },
             {
-              "option":"Môi, lưỡi tím tái",
-              "question": "Trường hợp?",
+              "text":"Môi, lưỡi tím tái",
+              "title": "Trường hợp?",
               "options": [
                 {
-                  "option": "Người trưởng thành",
+                  "text": "Người trưởng thành",
                   "guideline": "007"
                 },
                 {
-                  "option": "Chỉ có một mình",
+                  "text": "Chỉ có một mình",
                   "guideline": "008"
                 },
                 {
-                  "option": "Trẻ dưới 1 tuổi",
+                  "text": "Trẻ dưới 1 tuổi",
                   "guideline": "009"
                 }
               ]

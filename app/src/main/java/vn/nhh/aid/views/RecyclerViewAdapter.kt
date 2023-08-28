@@ -38,11 +38,11 @@ class RecyclerViewAdapter(
 
     override fun onBindViewHolder(holder: ItemViewHolder, position: Int) {
         val option = options?.elementAtOrNull(position) ?: return
-        if (option.symptoms == "null") {
+        if (option.smallText == "null") {
             holder.smallText.visibility = View.GONE
         }
-        holder.bigText.text = option.option
-        holder.smallText.text = option.symptoms
+        holder.bigText.text = option.text
+        holder.smallText.text = option.smallText
     }
 
     interface OnItemClickListener {

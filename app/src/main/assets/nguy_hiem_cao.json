@@ -1,58 +1,58 @@
 {
-  "question": "Các bệnh nguy hiểm đến tính mạng",
+  "title": "Các bệnh nguy hiểm đến tính mạng",
   "options": [
     {
-      "option": "Ngừng tuần hoàn",
-      "symptoms": "Nạn nhân không tỉnh táo, không thở và không có mạch",
-      "question": "Đối tượng?",
+      "text": "Ngừng tuần hoàn",
+      "small_text": "Nạn nhân không tỉnh táo, không thở và không có mạch",
+      "title": "Đối tượng?",
       "options": [
         {
-          "option": "Người trưởng thành",
+          "text": "Người trưởng thành",
           "guideline": "004"
         },
         {
-          "option": "Trẻ từ 1 tuổi đến tuổi dậy thì",
+          "text": "Trẻ từ 1 tuổi đến tuổi dậy thì",
           "guideline": "005"
         },
         {
-          "option": "Trẻ dưới 1 tuổi",
+          "text": "Trẻ dưới 1 tuổi",
           "guideline": "006"
         }
       ]
     },
     {
-      "option": "Hóc dị vật đường thở",
-      "symptoms": "Nạn nhân ho sặc sụa và liên tục, Nạn nhân khó thở, khó nói, Nạn nhân bám tay vào cổ, Môi, miệng, ngón tay tím tái, Đại tiểu tiện không tự chủ",
-      "question": "Trường hợp?",
+      "text": "Hóc dị vật đường thở",
+      "small_text": "Nạn nhân ho sặc sụa và liên tục, Nạn nhân khó thở, khó nói, Nạn nhân bám tay vào cổ, Môi, miệng, ngón tay tím tái, Đại tiểu tiện không tự chủ",
+      "title": "Trường hợp?",
       "options": [
         {
-          "option": "Người trưởng thành",
+          "text": "Người trưởng thành",
           "guideline": "007"
         },
         {
-          "option": "Chỉ có một mình",
+          "text": "Chỉ có một mình",
           "guideline": "008"
         },
         {
-          "option": "Trẻ dưới 1 tuổi",
+          "text": "Trẻ dưới 1 tuổi",
           "guideline": "009"
         }
       ]
     },
     {
-      "option": "Chảy máu nghiêm trọng",
+      "text": "Chảy máu nghiêm trọng",
       "guideline": "015",
-      "symptoms": "Chảy máu ở cổ"
+      "small_text": "Chảy máu ở cổ"
     },
     {
-      "option": "Đột quỵ",
+      "text": "Đột quỵ",
       "guideline": "001",
-      "symptoms": "Mắt nhắm không kín, miệng cười lệch, Yếu hoặc liệt một bên tay, Nói không rõ ràng"
+      "small_text": "Mắt nhắm không kín, miệng cười lệch, Yếu hoặc liệt một bên tay, Nói không rõ ràng"
     },
     {
-      "option": "Hạ đường huyết",
+      "text": "Hạ đường huyết",
       "guideline": "002",
-      "symptoms": "Hoa mắt, chóng mặt, bồn chồn, trống ngực đập liên hồi, Có cảm giác đói, Mệt mỏi một cách đột ngột, bất thường"
+      "small_text": "Hoa mắt, chóng mặt, bồn chồn, trống ngực đập liên hồi, Có cảm giác đói, Mệt mỏi một cách đột ngột, bất thường"
     }
   ]
 }

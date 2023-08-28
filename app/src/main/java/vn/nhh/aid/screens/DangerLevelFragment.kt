@@ -32,7 +32,7 @@ class DangerLevelFragment : BaseFragment(), RecyclerViewAdapter.OnItemClickListe
         super.onViewCreated(view, savedInstanceState)
 
         val title: TextView = view.findViewById(R.id.textView)
-        title.text = option?.question
+        title.text = option?.title
 
         recyclerview = view.findViewById(R.id.recyclerView)
         recyclerview.setHasFixedSize(true)
@@ -51,10 +51,10 @@ class DangerLevelFragment : BaseFragment(), RecyclerViewAdapter.OnItemClickListe
     }
 
     data class Option(
-        val option: String,
-        val symptoms: String,
+        val text: String,
+        val smallText: String,
         val guideline: String,
-        val question: String?,
+        val title: String?,
         val options: List<Option> = emptyList()
     )
 
@@ -70,10 +70,10 @@ class DangerLevelFragment : BaseFragment(), RecyclerViewAdapter.OnItemClickListe
 
         private fun parseOption(json: JSONObject): Option {
             return Option(
-                option = json.optString("option"),
-                symptoms = json.optString("symptoms"),
+                text = json.optString("text"),
+                smallText = json.optString("small_text"),
                 guideline = json.optString("guideline"),
-                question = json.optString("question"),
+                title = json.optString("title"),
                 options = json.toList("options").map { parseOption(it) }
             )
         }
