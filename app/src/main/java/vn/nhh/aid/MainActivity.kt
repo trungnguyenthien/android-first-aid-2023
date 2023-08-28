@@ -5,14 +5,13 @@ import android.content.res.ColorStateList
 import android.graphics.Color
 import android.graphics.drawable.ColorDrawable
 import android.os.Bundle
-import android.view.MenuItem
-import android.widget.AdapterView.OnItemSelectedListener
+import androidx.activity.OnBackPressedCallback
+import androidx.appcompat.app.ActionBar.*
 import androidx.appcompat.app.AppCompatActivity
 import androidx.appcompat.widget.AppCompatTextView
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.FragmentManager
 import com.google.android.material.bottomnavigation.BottomNavigationView
-import com.google.android.material.navigation.NavigationBarView
 import vn.nhh.aid.screens.*
 
 private var shareInstance: MainActivity? = null
@@ -25,7 +24,7 @@ class MainActivity : AppCompatActivity() {
         setContentView(R.layout.activity_main)
         val barColor = Color.WHITE
         window.statusBarColor = barColor
-        supportActionBar?.setDisplayOptions(androidx.appcompat.app.ActionBar.DISPLAY_SHOW_CUSTOM)
+        supportActionBar?.displayOptions = DISPLAY_SHOW_CUSTOM
         supportActionBar?.setCustomView(R.layout.abs_layout)
         supportActionBar?.setBackgroundDrawable(ColorDrawable(barColor))
         supportActionBar?.customView?.findViewById<AppCompatTextView>(R.id.tvTitle)?.let {
@@ -61,16 +60,16 @@ class MainActivity : AppCompatActivity() {
             pushPageStack(InfoFragment())
         }
         pushPageStack(HomeFragment())
-    }
+//        onBackPressedDispatcher.addCallback(this, object : OnBackPressedCallback(true) {
+//            override fun handleOnBackPressed() {
+//                val fragment = supportFragmentManager.findFragmentById(R.id.fragment_container)
+//                if (fragment is PreventBack) {
+//                    fragment.handleBackPressed(manager = supportFragmentManager)
+//                    if (!fragment.allowBack()) return
+//                }
+//            }
+//        })
 
-    override fun onBackPressed() {
-        super.onBackPressed()
-        val fragment = supportFragmentManager.findFragmentById(R.id.fragment_container)
-        if (fragment is PreventBack) {
-            fragment.handleBackPressed(fmanager = supportFragmentManager)
-            if (!fragment.allowBack()) return
-        }
-        super.onBackPressed()
     }
 
     @SuppressLint("CommitTransaction")

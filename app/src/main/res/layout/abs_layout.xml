@@ -8,11 +8,10 @@
     <androidx.appcompat.widget.AppCompatTextView
         android:id="@+id/tvTitle"
         style="@style/TextAppearance.AppCompat.Widget.ActionBar.Title"
-        android:textSize="26sp"
+        android:textSize="36sp"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:gravity="center"
-        android:fontFamily="serif-monospace"
         android:textColor="@color/glaucous" />
 
 </LinearLayout>

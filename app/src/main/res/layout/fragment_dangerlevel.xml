@@ -43,7 +43,7 @@
         android:background="@drawable/blue_rounded_button"
         android:textColor="@color/ghost_white"
         android:layout_gravity="center"
-        android:layout_marginTop="5dp"
+        android:layout_marginTop="15dp"
         android:paddingStart="30dp"
         android:paddingEnd="30dp"
         android:text="Nguy hiểm thấp"
