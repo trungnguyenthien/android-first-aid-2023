@@ -70,4 +70,6 @@ fun JSONObject.toList(key: String): List<JSONObject> {
     return list
 }
 
+fun JSONArray.toList() = List<JSONObject>(size = length()) { getJSONObject(it) }
+
 fun randUUID() = UUID.randomUUID().toString()

@@ -18,7 +18,7 @@ class ViewPagerAdapter(context: Context, val Guidelist: List<GuideFragment.Step>
         return view === `object` as LinearLayoutCompat
     }
     override fun instantiateItem(container: ViewGroup, position: Int): Any {
-    val caption = Guidelist?.get(position)?.Instruction
+    val caption = Guidelist?.get(position)?.instruction
     val url = Guidelist?.get(position)?.url
 
     val imageTextView = StepImageComponent(shareMainActivity()).apply {
