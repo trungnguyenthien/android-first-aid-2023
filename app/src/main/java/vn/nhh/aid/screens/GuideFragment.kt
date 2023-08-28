@@ -13,22 +13,20 @@ import vn.nhh.aid.shareMainActivity
 import vn.nhh.aid.utils.randUUID
 import vn.nhh.aid.utils.readJsonArrayFromAssets
 import vn.nhh.aid.utils.toList
-import vn.nhh.aid.views.ViewPagerAdapter
+import vn.nhh.aid.views.StepPagerAdapter
 
 private const val GUIDE_ID_PARAM = "GUIDE_ID_PARAM"
 
 class GuideFragment : BaseFragment() {
     private var guideId: String? = null
     private var guide: Guide? = null
-    private var steps: List<Step>? = emptyList()
-    private lateinit var viewPager: ViewPager
-    private lateinit var viewPagerAdapter: ViewPagerAdapter
+    private lateinit var stepPager: ViewPager
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         arguments?.let {
             guideId = it.getString(GUIDE_ID_PARAM)
-            guide = getGuideRoot()
+            guide = findGuide()
         }
     }
 
@@ -41,15 +39,14 @@ class GuideFragment : BaseFragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        requireActivity().title = "Hướng dẫn sơ cấp cứu"
 
         val guideTitle: TextView = view.findViewById(R.id.title_tv)
         guideTitle.text = guide?.guideTitle
 
-        viewPager = view.findViewById(R.id.idViewPager)
-        steps = guide?.steps ?: return
-        viewPagerAdapter = ViewPagerAdapter(requireContext(), steps)
-        viewPager.adapter = viewPagerAdapter
+        stepPager = view.findViewById(R.id.idViewPager)
+        stepPager.adapter = StepPagerAdapter(
+            steps = guide?.steps ?: emptyList()
+        )
     }
 
     data class Step(
@@ -63,13 +60,12 @@ class GuideFragment : BaseFragment() {
 
     data class Guide(
         val id: String,
-        val parentId: String? = null,
         val guideId: String? = null,
         val guideTitle: String? = null,
         val steps: List<Step> = emptyList()
     )
 
-    private fun getGuideRoot(): Guide? {
+    private fun findGuide(): Guide? {
         val root = readJsonArrayFromAssets(shareMainActivity(), "guide.json") ?: return null
         return parseGuide(root)
     }
@@ -83,13 +79,12 @@ class GuideFragment : BaseFragment() {
         type = json.optString("type")
     )
 
-    private fun parseGuide(json: JSONArray, parentId: String = "") = json.toList().firstOrNull {
+    private fun parseGuide(json: JSONArray) = json.toList().firstOrNull {
         it.getString("guideId") == guideId
     }?.let { guideJson ->
         val myId = randUUID()
         Guide(
             id = myId,
-            parentId = parentId,
             guideId = guideId,
             guideTitle = guideJson.getString("guideTitle"),
             steps = guideJson.toList("steps").map { stepJson ->

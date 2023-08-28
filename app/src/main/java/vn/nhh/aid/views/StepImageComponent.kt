@@ -2,10 +2,8 @@ package vn.nhh.aid.views
 
 import android.content.Context
 import android.view.LayoutInflater
-import androidx.appcompat.widget.AppCompatImageView
 import androidx.appcompat.widget.AppCompatTextView
 import androidx.appcompat.widget.LinearLayoutCompat
-import com.squareup.picasso.Picasso
 import vn.nhh.aid.R
 
 class StepImageComponent(context: Context) : LinearLayoutCompat(context) {
@@ -14,7 +12,6 @@ class StepImageComponent(context: Context) : LinearLayoutCompat(context) {
     }
 
     fun setData(
-        url: String,
         caption: String = "",
     ) {
         //val imageView: AppCompatImageView = findViewById(R.id.media)
