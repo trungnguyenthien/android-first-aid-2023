@@ -9,7 +9,7 @@ import vn.nhh.aid.R
 import vn.nhh.aid.pushPageStack
 
 
-class DangerLevelJudgeFragment: BaseFragment() {
+class DangerLevelJudgeFragment : BaseFragment() {
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -22,19 +22,16 @@ class DangerLevelJudgeFragment: BaseFragment() {
         super.onViewCreated(view, savedInstanceState)
 
         view.findViewById<AppCompatButton>(R.id.highd_button).setOnClickListener {
-            pushPageStack(DangerLevelFragment.newInstance(0, -1))
+            pushPageStack(DangerLevelFragment.newInstance(file = "nguy_hiem_cao.json"))
         }
         view.findViewById<AppCompatButton>(R.id.lowd_button).setOnClickListener {
-            pushPageStack(DangerLevelFragment.newInstance(1, -1))
+            pushPageStack(DangerLevelFragment.newInstance(file = "nguy_hiem_thap.json"))
         }
     }
 
     companion object {
         @JvmStatic
-        fun newInstance() =  DangerLevelJudgeFragment().apply {
-            arguments = Bundle().apply {
-            }
-        }
+        fun newInstance() = DangerLevelJudgeFragment()
     }
 }
 

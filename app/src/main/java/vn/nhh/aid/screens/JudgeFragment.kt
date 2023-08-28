@@ -33,7 +33,7 @@ class JudgeFragment: BaseListFragment() {
         footerLinearLayout.addView(makeListItemButton().apply {
             text = data.otherText
             setOnClickListener {
-
+                pushPageStack(DangerLevelFragment.newInstance(file = "dau_hieu_khac.json"))
             }
         })
         data.signs.forEach {

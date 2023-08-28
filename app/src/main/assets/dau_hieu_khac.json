@@ -2,49 +2,49 @@
   "question": "Có vết thương ở vị trí cụ thể không?",
   "options": [
     {
-      "answer": "Có",
+      "option": "Có",
       "question":"Nạn nhân có dấu hiệu nào?",
       "options":[
         {
-          "answer": "Da đỏ, xuất hiện nốt phồng",
+          "option": "Da đỏ, xuất hiện nốt phồng",
           "guideline": "010"
         },
         {
-          "answer": "Có vết bầm, xương bị lệch",
+          "option": "Có vết bầm, xương bị lệch",
           "question": "Vị trí bị thương?",
           "options":[
             {
-              "answer": "Cánh tay",
+              "option": "Cánh tay",
               "guideline": "011"
             },
             {
-              "answer": "Cẳng tay",
+              "option": "Cẳng tay",
               "guideline": "012"
             },
             {
-              "answer": "Đùi",
+              "option": "Đùi",
               "guideline": "013"
             },
             {
-              "answer": "Cẳng chân",
+              "option": "Cẳng chân",
               "guideline": "014"
             }
           ]
         },
         {
-          "answer": "Chảy máu",
+          "option": "Chảy máu",
           "question": "Vị trí bị thương?",
           "options": [
             {
-              "answer": "Cổ",
+              "option": "Cổ",
               "guideline": "015"
             },
             {
-              "answer": "Chi thẳng",
+              "option": "Chi thẳng",
               "guideline": "016"
             },
             {
-              "answer": "Khớp",
+              "option": "Khớp",
               "guideline": "017"
             }
           ]
@@ -52,57 +52,57 @@
       ]
     },
     {
-      "answer": "Không",
+      "option": "Không",
       "question": "Nạn nhân có dấu hiệu nào?",
       "options": [
         {
-          "answer": "Một bên mặt hoặc tay bị liệt",
+          "option": "Một bên mặt hoặc tay bị liệt",
           "guideline": "001"
         },
         {
-          "answer": "Tim đập nhanh, mệt mỏi, chóng mặt",
+          "option": "Tim đập nhanh, mệt mỏi, chóng mặt",
           "guideline": "002"
         },
         {
-          "answer": "Miệng lưỡi bị khô",
+          "option": "Miệng lưỡi bị khô",
           "guideline": "003"
         },
         {
-          "answer": "Khó thở/Không thở",
+          "option": "Khó thở/Không thở",
           "question": "Dấu hiệu?",
           "options": [
             {
-              "answer": "Bất tỉnh, không có mạch",
+              "option": "Bất tỉnh, không có mạch",
               "question": "Đối tượng?",
               "options": [
                 {
-                  "answer": "Người trưởng thành",
+                  "option": "Người trưởng thành",
                   "guideline": "004"
                 },
                 {
-                  "answer": "Trẻ từ 1 tuổi đến tuổi dậy thì",
+                  "option": "Trẻ từ 1 tuổi đến tuổi dậy thì",
                   "guideline": "005"
                 },
                 {
-                  "answer": "Trẻ dưới 1 tuổi",
+                  "option": "Trẻ dưới 1 tuổi",
                   "guideline": "006"
                 }
               ]
             },
             {
-              "answer":"Môi, lưỡi tím tái",
+              "option":"Môi, lưỡi tím tái",
               "question": "Trường hợp?",
               "options": [
                 {
-                  "answer": "Người trưởng thành",
+                  "option": "Người trưởng thành",
                   "guideline": "007"
                 },
                 {
-                  "answer": "Chỉ có một mình",
+                  "option": "Chỉ có một mình",
                   "guideline": "008"
                 },
                 {
-                  "answer": "Trẻ dưới 1 tuổi",
+                  "option": "Trẻ dưới 1 tuổi",
                   "guideline": "009"
                 }
               ]

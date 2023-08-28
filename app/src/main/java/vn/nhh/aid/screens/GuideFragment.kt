@@ -44,13 +44,12 @@ class GuideFragment : BaseFragment() {
         requireActivity().title = "Hướng dẫn sơ cấp cứu"
 
         val text = guideObject?.Proname
-        val TxtView:TextView = view.findViewById(R.id.title_tv)
+        val TxtView: TextView = view.findViewById(R.id.title_tv)
         TxtView.text = text
         viewPager = view.findViewById(R.id.idViewPager)
         Lstep = guideObject?.Steps ?: return
         viewPagerAdapter = ViewPagerAdapter(requireContext(), Lstep)
         viewPager.adapter = viewPagerAdapter
-
     }
 
 
@@ -62,6 +61,7 @@ class GuideFragment : BaseFragment() {
         val url: String? = null,
         val size: String? = null,
     )
+
     data class Guide(
         val id: String,
         val parentId: String? = null,
@@ -75,7 +75,7 @@ class GuideFragment : BaseFragment() {
         return parseGuide(root)
     }
 
-    private fun parseStep(json: JSONObject, parentId: String =""): Step {
+    private fun parseStep(json: JSONObject, parentId: String = ""): Step {
         val myId = randUUID()
         return Step(
             id = myId,
@@ -83,29 +83,29 @@ class GuideFragment : BaseFragment() {
             Instruction = json.optString("Instruction"),
             size = json.optString("size"),
             url = json.optString("gu"),
-            type =  json.optString("type")
+            type = json.optString("type")
         )
     }
 
     private fun parseGuide(json: JSONArray, parentId: String = ""): Guide? {
-        for (i in 0 until json.length())
-        {
+        for (i in 0 until json.length()) {
             val temp1 = json.getJSONObject(i).getString("guideId")
-            if(temp1 == guideId)
-            {
+            if (temp1 == guideId) {
                 val myId = randUUID()
                 return Guide(
                     id = myId,
                     parentId = parentId,
                     Proname = json.optJSONObject(i).getString("ProName"),
                     guideline = json.optJSONObject(i).getString("guideId"),
-                    Steps =  json.optJSONObject(i).toList("Steps").map{parseStep(it, parentId = myId)}
+                    Steps = json.optJSONObject(i).toList("Steps")
+                        .map { parseStep(it, parentId = myId) }
                 )
 
             }
         }
         return null
     }
+
     companion object {
         @JvmStatic
         fun newInstance(guideId: String?) = GuideFragment().apply {

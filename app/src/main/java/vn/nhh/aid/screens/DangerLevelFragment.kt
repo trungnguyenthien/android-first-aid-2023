@@ -12,28 +12,13 @@ import org.json.JSONObject
 import vn.nhh.aid.R
 import vn.nhh.aid.pushPageStack
 import vn.nhh.aid.shareMainActivity
-import vn.nhh.aid.utils.readJsonArrayFromAssets
+import vn.nhh.aid.utils.readJsonFromAssets
 import vn.nhh.aid.utils.toList
 import vn.nhh.aid.views.RecyclerViewAdapter
 
-private const val D = "0"
-private const val N = "-1"
-
-class DangerLevelFragment: BaseFragment(), RecyclerViewAdapter.OnItemClickListener {
-    private var level: Int = 0
-    private var position: Int = 0
+class DangerLevelFragment : BaseFragment(), RecyclerViewAdapter.OnItemClickListener {
     private lateinit var recyclerview: RecyclerView
-    private var prolist: List<Procedure>? = emptyList()
-    private lateinit var adapter: RecyclerViewAdapter
-
-    override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
-        arguments?.let {
-            level = it.getInt(D, -1)
-            position = it.getInt(N, -1)
-            prolist = getListRoot()
-        }
-    }
+    private var option: Option? = null
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -41,64 +26,56 @@ class DangerLevelFragment: BaseFragment(), RecyclerViewAdapter.OnItemClickListen
     ): View? {
         return inflater.inflate(R.layout.fragment_dangerlevel_low_high, container, false)
     }
+
     @SuppressLint("SetTextI18n")
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
+        val title: TextView = view.findViewById(R.id.textView)
+        title.text = option?.question
+
         recyclerview = view.findViewById(R.id.recyclerView)
         recyclerview.setHasFixedSize(true)
         recyclerview.layoutManager = LinearLayoutManager(requireContext())
-        val title: TextView = view.findViewById(R.id.textView)
-        if (position != -1){
-            title.text = prolist?.get(position)?.question
-            prolist = prolist?.get(position)?.options
-        } else if (level == 0){
-            title.text = "Các bệnh nguy hiểm đến tính mạng"
-        } else { title.text = "Các bệnh có thể trì hoãn"}
-        adapter = RecyclerViewAdapter(prolist, this)
-        recyclerview.adapter = adapter
+        recyclerview.adapter = RecyclerViewAdapter(option?.options ?: emptyList(), this)
     }
 
-
-    override fun onItemClick(position: Int){
-        val itemClick: String = prolist?.get(position)!!.guideline
-        if (itemClick.isNotEmpty()){
-            pushPageStack(GuideFragment.newInstance(itemClick))
+    override fun onItemClick(position: Int) {
+        val tapOption = option?.options?.elementAtOrNull(position) ?: return
+        val guideline = tapOption.guideline
+        if (guideline.isNotEmpty()) {
+            pushPageStack(GuideFragment.newInstance(guideline))
         } else {
-            pushPageStack(newInstance(level, position))
+            pushPageStack(newInstance(tapOption))
         }
     }
 
-    data class Procedure(
-        val Name: String,
-        val Symptoms: String,
+    data class Option(
+        val option: String,
+        val symptoms: String,
         val guideline: String,
         val question: String?,
-        val options: List<Procedure> = emptyList()
+        val options: List<Option> = emptyList()
     )
 
-    private fun getListRoot(): List<Procedure>? {
-        val root = readJsonArrayFromAssets(shareMainActivity(), "level.json") ?: return null
-        return root.optJSONObject(level).toList("Options").map {parseProList(it)}
-    }
-
-    private fun parseProList(json: JSONObject): Procedure {
-        return Procedure (
-            Name = json.optString("Option"),
-            Symptoms = json.optString("symptoms"),
-            guideline = json.optString("guideline"),
-            question = json.optString("question"),
-            options = json.toList("options").map { parseProList(it)}
-        )
-    }
-
     companion object {
-        @JvmStatic
-        fun newInstance(position: Int, Clicked: Int) = DangerLevelFragment().apply {
-            arguments = Bundle().apply {
-                putInt(D, position)
-                putInt(N, Clicked)
-            }
+        fun newInstance(file: String) = DangerLevelFragment().apply {
+            val root = readJsonFromAssets(shareMainActivity(), file) ?: JSONObject()
+            this.option = parseOption(root)
+        }
+
+        fun newInstance(option: Option) = DangerLevelFragment().apply {
+            this.option = option
+        }
+
+        private fun parseOption(json: JSONObject): Option {
+            return Option(
+                option = json.optString("option"),
+                symptoms = json.optString("symptoms"),
+                guideline = json.optString("guideline"),
+                question = json.optString("question"),
+                options = json.toList("options").map { parseOption(it) }
+            )
         }
     }
 }
