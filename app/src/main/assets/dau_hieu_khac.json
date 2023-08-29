@@ -1,0 +1,115 @@
+{
+  "optionTitle": "Có vết thương ở vị trí cụ thể không?",
+  "options": [
+    {
+      "text": "Có",
+      "optionTitle":"Nạn nhân có dấu hiệu nào?",
+      "options":[
+        {
+          "text": "Da đỏ, xuất hiện nốt phồng",
+          "guideId": "010"
+        },
+        {
+          "text": "Có vết bầm, xương bị lệch",
+          "optionTitle": "Vị trí bị thương?",
+          "options":[
+            {
+              "text": "Cánh tay",
+              "guideId": "011"
+            },
+            {
+              "text": "Cẳng tay",
+              "guideId": "012"
+            },
+            {
+              "text": "Đùi",
+              "guideId": "013"
+            },
+            {
+              "text": "Cẳng chân",
+              "guideId": "014"
+            }
+          ]
+        },
+        {
+          "text": "Chảy máu",
+          "optionTitle": "Vị trí bị thương?",
+          "options": [
+            {
+              "text": "Cổ",
+              "guideId": "015"
+            },
+            {
+              "text": "Chi thẳng",
+              "guideId": "016"
+            },
+            {
+              "text": "Khớp",
+              "guideId": "017"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "text": "Không",
+      "optionTitle": "Nạn nhân có dấu hiệu nào?",
+      "options": [
+        {
+          "text": "Một bên mặt hoặc tay bị liệt",
+          "guideId": "001"
+        },
+        {
+          "text": "Tim đập nhanh, mệt mỏi, chóng mặt",
+          "guideId": "002"
+        },
+        {
+          "text": "Miệng lưỡi bị khô",
+          "guideId": "003"
+        },
+        {
+          "text": "Khó thở/Không thở",
+          "optionTitle": "Dấu hiệu?",
+          "options": [
+            {
+              "text": "Bất tỉnh, không có mạch",
+              "optionTitle": "Đối tượng?",
+              "options": [
+                {
+                  "text": "Người trưởng thành",
+                  "guideId": "004"
+                },
+                {
+                  "text": "Trẻ từ 1 tuổi đến tuổi dậy thì",
+                  "guideId": "005"
+                },
+                {
+                  "text": "Trẻ dưới 1 tuổi",
+                  "guideId": "006"
+                }
+              ]
+            },
+            {
+              "text":"Môi, lưỡi tím tái",
+              "optionTitle": "Trường hợp?",
+              "options": [
+                {
+                  "text": "Người trưởng thành",
+                  "guideId": "007"
+                },
+                {
+                  "text": "Chỉ có một mình",
+                  "guideId": "008"
+                },
+                {
+                  "text": "Trẻ dưới 1 tuổi",
+                  "guideId": "009"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

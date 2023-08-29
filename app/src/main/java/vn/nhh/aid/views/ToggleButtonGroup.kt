@@ -11,6 +11,8 @@ class ToggleButtonGroup {
         toggleButton.setOnCheckedChangeListener(checkedChangeListener)
     }
 
+    fun allButton() = toggleButtons.toList()
+
     fun setOnCheckedChangeListener(listener: CompoundButton.OnCheckedChangeListener) {
         onCheckedChangeListener = listener
     }

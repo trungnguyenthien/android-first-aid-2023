@@ -13,22 +13,20 @@ import vn.nhh.aid.shareMainActivity
 import vn.nhh.aid.utils.randUUID
 import vn.nhh.aid.utils.readJsonArrayFromAssets
 import vn.nhh.aid.utils.toList
-import vn.nhh.aid.views.ViewPagerAdapter
+import vn.nhh.aid.views.StepPagerAdapter
 
 private const val GUIDE_ID_PARAM = "GUIDE_ID_PARAM"
 
 class GuideFragment : BaseFragment() {
     private var guideId: String? = null
-    private var guideObject: Guide? = null
-    private var Lstep: List<Step>? = emptyList()
-    private lateinit var viewPager: ViewPager
-    lateinit var viewPagerAdapter: ViewPagerAdapter
+    private var guide: Guide? = null
+    private lateinit var stepPager: ViewPager
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         arguments?.let {
             guideId = it.getString(GUIDE_ID_PARAM)
-            guideObject = getGuideRoot()
+            guide = findGuide()
         }
     }
 
@@ -41,71 +39,60 @@ class GuideFragment : BaseFragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        requireActivity().title = "Hướng dẫn sơ cấp cứu"
 
-        val text = guideObject?.Proname
-        val TxtView:TextView = view.findViewById(R.id.title_tv)
-        TxtView.text = text
-        viewPager = view.findViewById(R.id.idViewPager)
-        Lstep = guideObject?.Steps
-        viewPagerAdapter = ViewPagerAdapter(requireContext(), Lstep)
-        viewPager.adapter = viewPagerAdapter
+        val guideTitle: TextView = view.findViewById(R.id.title_tv)
+        guideTitle.text = guide?.guideTitle
 
+        stepPager = view.findViewById(R.id.idViewPager)
+        stepPager.adapter = StepPagerAdapter(
+            steps = guide?.steps ?: emptyList()
+        )
     }
-
 
     data class Step(
         val id: String,
         val parentId: String? = null,
-        val Instruction: String? = null,
+        val instruction: String? = null,
         val type: String? = null,
         val url: String? = null,
         val size: String? = null,
     )
+
     data class Guide(
         val id: String,
-        val parentId: String? = null,
-        val guideline: String? = null,
-        val Proname: String? = null,
-        val Steps: List<Step> = emptyList()
+        val guideId: String? = null,
+        val guideTitle: String? = null,
+        val steps: List<Step> = emptyList()
     )
 
-    fun getGuideRoot(): Guide? {
+    private fun findGuide(): Guide? {
         val root = readJsonArrayFromAssets(shareMainActivity(), "guide.json") ?: return null
         return parseGuide(root)
     }
 
-    private fun parseStep(json: JSONObject, parentId: String =""): Step {
+    private fun parseStep(json: JSONObject, parentId: String = "") = Step(
+        id = randUUID(),
+        parentId = parentId,
+        instruction = json.optString("instruction"),
+        size = json.optString("size"),
+        url = json.optString("url"),
+        type = json.optString("type")
+    )
+
+    private fun parseGuide(json: JSONArray) = json.toList().firstOrNull {
+        it.getString("guideId") == guideId
+    }?.let { guideJson ->
         val myId = randUUID()
-        return Step(
+        Guide(
             id = myId,
-            parentId = parentId,
-            Instruction = json.optString("Instruction"),
-            size = json.optString("size"),
-            url = json.optString("gu"),
-            type =  json.optString("type")
+            guideId = guideId,
+            guideTitle = guideJson.getString("guideTitle"),
+            steps = guideJson.toList("steps").map { stepJson ->
+                parseStep(stepJson, parentId = myId)
+            },
         )
     }
 
-    private fun parseGuide(json: JSONArray, parentId: String = ""): Guide? {
-        for (i in 0 until json.length())
-        {
-            val temp1 = json.getJSONObject(i).getString("guideId")
-            if(temp1 == guideId)
-            {
-                val myId = randUUID()
-                return Guide(
-                    id = myId,
-                    parentId = parentId,
-                    Proname = json.optJSONObject(i).getString("ProName"),
-                    guideline = json.optJSONObject(i).getString("guideId"),
-                    Steps =  json.optJSONObject(i).toList("Steps").map{parseStep(it, parentId = myId)}
-                )
-
-            }
-        }
-        return null
-    }
     companion object {
         @JvmStatic
         fun newInstance(guideId: String?) = GuideFragment().apply {

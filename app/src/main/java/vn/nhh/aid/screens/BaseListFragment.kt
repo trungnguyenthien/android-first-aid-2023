@@ -27,7 +27,7 @@ open class BaseListFragment : BaseFragment(), PreventBack {
         }
     }
 
-    override fun handleBackPressed(fmanager: FragmentManager) {
+    override fun handleBackPressed(manager: FragmentManager) {
 
     }
 

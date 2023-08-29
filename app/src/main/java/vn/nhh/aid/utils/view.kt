@@ -5,10 +5,14 @@ import android.content.res.ColorStateList
 import android.graphics.Color
 import android.graphics.Typeface
 import android.view.View
+import android.view.ViewGroup.MarginLayoutParams
 import android.widget.ImageView
+import android.widget.TextView
 import android.widget.ToggleButton
+import androidx.annotation.ColorInt
 import androidx.appcompat.widget.LinearLayoutCompat
 import androidx.core.view.setPadding
+import androidx.core.widget.TextViewCompat
 import com.google.android.material.imageview.ShapeableImageView
 import com.google.android.material.shape.CornerFamily
 import com.google.android.material.shape.MaterialShapeDrawable
@@ -69,7 +73,41 @@ fun parseVideoId(youtubeUrl: String): String? {
         null
     }
 }
+fun makeButtonTextColorStateList(@ColorInt normal: Int, @ColorInt pressed: Int) = ColorStateList(
+    arrayOf(intArrayOf(android.R.attr.state_pressed), intArrayOf()),
+    intArrayOf(pressed, normal)
+)
+
+fun makeTextColorStateList(@ColorInt normal: Int, @ColorInt pressed: Int) = ColorStateList(
+    arrayOf(intArrayOf(android.R.attr.state_pressed), intArrayOf()),
+    intArrayOf(pressed, normal)
+)
+
+enum class LinearLayoutGravity(val value: Int) {
+    GRAVITY_TOP(0x30),
+    GRAVITY_BOTTOM(0x50),
+    GRAVITY_LEFT(0x03),
+    GRAVITY_RIGHT(0x05),
+    GRAVITY_CENTER_VERTICAL(0x10),
+    GRAVITY_FILL_VERTICAL(0x70),
+    GRAVITY_CENTER_HORIZONTAL(0x01),
+    GRAVITY_FILL_HORIZONTAL(0x07),
+    GRAVITY_CENTER(0x11),
+    GRAVITY_FILL(0x77)
+}
+fun makeLinearLayoutParam(
+    marginParams: MarginLayoutParams,
+    gravity: LinearLayoutGravity
+) = LinearLayoutCompat.LayoutParams(marginParams).apply {
+    this.gravity = gravity.value
+}
 
 fun loadImageByUrl(url: String, imageView: ImageView) {
     Picasso.get().load(url).into(imageView)
+}
+
+fun makeTitleTextView(title: String) = TextView(shareMainActivity()).apply {
+    text = title
+    textSize = 30F
+    setTextColor(makeTextColorStateList(normal = Color.BLACK, pressed = Color.GRAY))
 }

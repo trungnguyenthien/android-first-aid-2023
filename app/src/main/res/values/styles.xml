@@ -8,10 +8,19 @@
         <item name="exampleColor">@color/light_blue_400</item>
     </style>
 
-    <style name="AppTheme" parent="Theme.AppCompat.Light.NoActionBar">
-        <item name="android:windowTranslucentNavigation">true</item>
-        <item name="android:windowTranslucentStatus">true</item>
-        <!-- Các thuộc tính khác của theme -->
+    <!-- Defined a new style with three items of color. -->
+    <style name="AppTheme" parent="@style/Theme.AppCompat.Light.DarkActionBar">
+        <item name="android:actionBarStyle">@style/MyActionBar</item>
+        <!-- Support library compatibility -->
+        <item name="actionBarStyle">@style/MyActionBar</item>
+    </style>
+
+
+    <style name="MyActionBar" parent="@style/Widget.AppCompat.Light.ActionBar.Solid.Inverse">
+        <item name="android:background">@color/lavender</item>
+
+        <!-- Support library compatibility -->
+        <item name="background">@color/lavender</item>
     </style>
 
     <style name="Widget.Theme.FirstAid.ButtonBar.Fullscreen" parent="">

@@ -1,0 +1,58 @@
+{
+  "optionTitle": "Các bệnh nguy hiểm đến tính mạng",
+  "options": [
+    {
+      "text": "Ngừng tuần hoàn",
+      "smallText": "Nạn nhân không tỉnh táo, không thở và không có mạch",
+      "optionTitle": "Đối tượng?",
+      "options": [
+        {
+          "text": "Người trưởng thành",
+          "guideId": "004"
+        },
+        {
+          "text": "Trẻ từ 1 tuổi đến tuổi dậy thì",
+          "guideId": "005"
+        },
+        {
+          "text": "Trẻ dưới 1 tuổi",
+          "guideId": "006"
+        }
+      ]
+    },
+    {
+      "text": "Hóc dị vật đường thở",
+      "smallText": "Nạn nhân ho sặc sụa và liên tục, Nạn nhân khó thở, khó nói, Nạn nhân bám tay vào cổ, Môi, miệng, ngón tay tím tái, Đại tiểu tiện không tự chủ",
+      "optionTitle": "Trường hợp?",
+      "options": [
+        {
+          "text": "Người trưởng thành",
+          "guideId": "007"
+        },
+        {
+          "text": "Chỉ có một mình",
+          "guideId": "008"
+        },
+        {
+          "text": "Trẻ dưới 1 tuổi",
+          "guideId": "009"
+        }
+      ]
+    },
+    {
+      "text": "Chảy máu nghiêm trọng",
+      "guideId": "015",
+      "smallText": "Chảy máu ở cổ"
+    },
+    {
+      "text": "Đột quỵ",
+      "guideId": "001",
+      "smallText": "Mắt nhắm không kín, miệng cười lệch, Yếu hoặc liệt một bên tay, Nói không rõ ràng"
+    },
+    {
+      "text": "Hạ đường huyết",
+      "guideId": "002",
+      "smallText": "Hoa mắt, chóng mặt, bồn chồn, trống ngực đập liên hồi, Có cảm giác đói, Mệt mỏi một cách đột ngột, bất thường"
+    }
+  ]
+}
